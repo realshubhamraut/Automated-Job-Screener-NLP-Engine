@@ -1,0 +1,3 @@
+2025-02-28 21:32:35 - root - INFO - Logging initialized. Log file: /Users/proxim/Desktop/Automated-First-Screener-and-AI-Job-Matching-NLP-WebEngine/logs/app_log_20250228_213235.log
+2025-02-28 21:32:49 - app.pages.upload_page - INFO - Loaded 120 resumes from storage
+2025-02-28 21:32:49 - app.pages.upload_page - INFO - Loaded 1 job descriptions from storage

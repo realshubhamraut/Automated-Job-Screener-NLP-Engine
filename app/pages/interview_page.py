@@ -4,39 +4,57 @@ import time
 import json
 import os
 from typing import Dict, List, Any, Optional
-import google.generativeai as genai
 from dotenv import load_dotenv
 
 from app.components import document_view
-from src.nlp.question_generator import QuestionGenerator
-from src.utils.logger import get_logger
 
-# Initialize logger
-logger = get_logger(__name__)
+# Initialize logger - using try/except to avoid breaking imports
+try:
+    from src.utils.logger import get_logger
+    logger = get_logger(__name__)
+except ImportError:
+    import logging
+    logger = logging.getLogger(__name__)
+    logger.setLevel(logging.INFO)
 
 # Load environment variables
 load_dotenv()
 
-# Configure Gemini API
-try:
-    genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
-    model = genai.GenerativeModel('gemini-pro')
-    GEMINI_AVAILABLE = True
-except Exception as e:
-    logger.error(f"Error configuring Gemini API: {str(e)}")
-    GEMINI_AVAILABLE = False
-
+# Define render function first so it's always available for import
 def render():
     """Render the interview questions page"""
     st.title("AI Interview Question Generator")
     st.write("Generate personalized interview questions based on resume and job description matches.")
     
+    # Import required modules inside the function to prevent breaking imports
+    try:
+        import google.generativeai as genai
+        from src.nlp.question_generator import QuestionGenerator
+        IMPORTS_AVAILABLE = True
+    except ImportError as e:
+        logger.error(f"Import error: {str(e)}")
+        st.error(f"Required package not available: {str(e)}")
+        st.info("Install missing packages by adding them to requirements.txt")
+        IMPORTS_AVAILABLE = False
+        
+    if not IMPORTS_AVAILABLE:
+        return
+    
+    # Configure Gemini API
+    try:
+        genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
+        model = genai.GenerativeModel('gemini-pro')
+        GEMINI_AVAILABLE = True
+    except Exception as e:
+        logger.error(f"Error configuring Gemini API: {str(e)}")
+        GEMINI_AVAILABLE = False
+    
     # Check for required session state data
-    if not st.session_state.resumes:
+    if not st.session_state.get('resumes'):
         st.warning("Please upload at least one resume first.")
         return
     
-    if not st.session_state.job_descriptions:
+    if not st.session_state.get('job_descriptions'):
         st.warning("Please upload at least one job description first.")
         return
     
@@ -180,7 +198,9 @@ def render():
                                 job_text, 
                                 num_questions, 
                                 question_types, 
-                                difficulty
+                                difficulty,
+                                genai,
+                                model
                             )
                         else:
                             # Fallback to rule-based generation
@@ -281,7 +301,9 @@ def render():
                                     job_text, 
                                     num_questions, 
                                     question_types, 
-                                    difficulty
+                                    difficulty,
+                                    genai,
+                                    model
                                 )
                             else:
                                 # Fallback to rule-based generation
@@ -327,7 +349,9 @@ def generate_questions_gemini(
     job_text: str, 
     num_questions: int, 
     question_types: List[str], 
-    difficulty: str
+    difficulty: str,
+    genai,
+    model
 ) -> List[Dict[str, str]]:
     """
     Generate interview questions using Google's Gemini API
@@ -338,6 +362,8 @@ def generate_questions_gemini(
         num_questions: Number of questions to generate
         question_types: Types of questions to generate
         difficulty: Difficulty level of questions
+        genai: Google generative AI module
+        model: Gemini model instance
         
     Returns:
         List of question dictionaries
