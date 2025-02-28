@@ -14,3 +14,4 @@ pytesseract
 Pillow
 faiss-cpu
 wordcloud
+seaborn

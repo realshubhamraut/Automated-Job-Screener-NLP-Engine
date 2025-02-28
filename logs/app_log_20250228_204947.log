@@ -1,0 +1,10 @@
+2025-02-28 20:49:47 - root - INFO - Logging initialized. Log file: /Users/proxim/Desktop/Automated-First-Screener-and-AI-Job-Matching-NLP-WebEngine/logs/app_log_20250228_204947.log
+2025-02-28 20:49:59 - app.pages.upload_page - INFO - Loaded 120 resumes from storage
+2025-02-28 20:49:59 - app.pages.upload_page - INFO - Loaded 1 job descriptions from storage
+2025-02-28 20:51:09 - src.document_processor.embedder - INFO - Initializing embedder with model sentence-transformers/all-MiniLM-L6-v2 on cpu
+2025-02-28 20:51:09 - src.document_processor.embedder - INFO - Initializing embedder with model sentence-transformers/all-MiniLM-L6-v2 on cpu
+2025-02-28 20:51:10 - src.document_processor.embedder - INFO - Model loaded successfully: sentence-transformers/all-MiniLM-L6-v2
+2025-02-28 20:51:11 - src.document_processor.embedder - INFO - Model loaded successfully: sentence-transformers/all-MiniLM-L6-v2
+2025-02-28 20:51:47 - src.nlp.summarizer - INFO - Initializing summarizer with model facebook/bart-large-cnn on cpu
+2025-02-28 20:51:58 - src.nlp.summarizer - INFO - Summarizer initialized successfully
+2025-02-28 20:51:58 - src.nlp.summarizer - INFO - Text too long (3289 tokens), splitting into chunks
