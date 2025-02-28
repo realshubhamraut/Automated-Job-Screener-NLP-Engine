@@ -1,0 +1,19 @@
+2025-02-27 16:12:14 - root - INFO - Logging initialized. Log file: /Users/proxim/Desktop/Automated-First-Screener-and-AI-Job-Matching-NLP-WebEngine/logs/app_log_20250227_161214.log
+2025-02-27 16:12:18 - faiss.loader - INFO - Loading faiss.
+2025-02-27 16:12:18 - faiss.loader - INFO - Successfully loaded faiss.
+2025-02-27 16:12:18 - faiss - INFO - Failed to load GPU Faiss: name 'GpuIndexIVFFlat' is not defined. Will not load constructor refs for GPU indexes.
+2025-02-27 16:16:55 - app.pages.upload_page - INFO - Successfully processed resume: haha.pdf
+2025-02-27 16:16:59 - app.pages.upload_page - INFO - Successfully processed job description: Untitled.txt
+2025-02-27 16:17:24 - src.document_processor.embedder - INFO - Initializing embedder with model sentence-transformers/all-MiniLM-L6-v2 on cpu
+2025-02-27 16:17:25 - src.document_processor.embedder - INFO - Model loaded successfully: sentence-transformers/all-MiniLM-L6-v2
+2025-02-27 16:17:25 - app.pages.matching_page - ERROR - Error initializing NLP models: 'TextEmbedder' object has no attribute 'dimension'
+2025-02-27 16:17:33 - src.document_processor.embedder - INFO - Initializing embedder with model sentence-transformers/all-MiniLM-L6-v2 on cpu
+2025-02-27 16:17:33 - src.document_processor.embedder - INFO - Model loaded successfully: sentence-transformers/all-MiniLM-L6-v2
+2025-02-27 16:17:33 - app.pages.matching_page - ERROR - Error initializing NLP models: 'TextEmbedder' object has no attribute 'dimension'
+2025-02-27 16:17:35 - src.document_processor.embedder - INFO - Initializing embedder with model sentence-transformers/all-MiniLM-L6-v2 on cpu
+2025-02-27 16:17:36 - src.document_processor.embedder - INFO - Model loaded successfully: sentence-transformers/all-MiniLM-L6-v2
+2025-02-27 16:17:36 - app.pages.matching_page - ERROR - Error initializing NLP models: 'TextEmbedder' object has no attribute 'dimension'
+2025-02-27 16:17:55 - src.nlp.summarizer - INFO - Initializing summarizer with model facebook/bart-large-cnn on cpu
+2025-02-27 16:19:03 - src.document_processor.embedder - INFO - Initializing embedder with model sentence-transformers/all-MiniLM-L6-v2 on cpu
+2025-02-27 16:19:05 - src.document_processor.embedder - INFO - Model loaded successfully: sentence-transformers/all-MiniLM-L6-v2
+2025-02-27 16:19:05 - app.pages.interview_page - ERROR - Error generating interview questions: 'TextEmbedder' object has no attribute 'dimension'

@@ -1,0 +1,304 @@
+2025-02-28 17:07:47 - root - INFO - Logging initialized. Log file: /Users/proxim/Desktop/Automated-First-Screener-and-AI-Job-Matching-NLP-WebEngine/logs/app_log_20250228_170747.log
+2025-02-28 17:07:56 - app.pages.upload_page - INFO - Loaded 1 resumes from storage
+2025-02-28 17:07:56 - app.pages.upload_page - INFO - Loaded 1 job descriptions from storage
+2025-02-28 17:08:05 - src.document_processor.embedder - INFO - Initializing embedder with model sentence-transformers/all-MiniLM-L6-v2 on cpu
+2025-02-28 17:08:06 - src.document_processor.embedder - INFO - Model loaded successfully: sentence-transformers/all-MiniLM-L6-v2
+2025-02-28 17:08:35 - src.document_processor.embedder - INFO - Initializing embedder with model sentence-transformers/all-MiniLM-L6-v2 on cpu
+2025-02-28 17:08:35 - src.document_processor.embedder - INFO - Model loaded successfully: sentence-transformers/all-MiniLM-L6-v2
+2025-02-28 17:08:41 - src.document_processor.embedder - INFO - Initializing embedder with model sentence-transformers/all-MiniLM-L6-v2 on cpu
+2025-02-28 17:08:42 - src.document_processor.embedder - INFO - Model loaded successfully: sentence-transformers/all-MiniLM-L6-v2
+2025-02-28 17:08:48 - src.document_processor.embedder - INFO - Initializing embedder with model sentence-transformers/all-MiniLM-L6-v2 on cpu
+2025-02-28 17:08:48 - src.document_processor.embedder - INFO - Model loaded successfully: sentence-transformers/all-MiniLM-L6-v2
+2025-02-28 17:23:32 - src.document_processor.embedder - INFO - Initializing embedder with model sentence-transformers/all-MiniLM-L6-v2 on cpu
+2025-02-28 17:23:33 - src.document_processor.embedder - INFO - Model loaded successfully: sentence-transformers/all-MiniLM-L6-v2
+2025-02-28 17:23:34 - src.document_processor.embedder - INFO - Initializing embedder with model sentence-transformers/all-MiniLM-L6-v2 on cpu
+2025-02-28 17:23:34 - src.document_processor.embedder - INFO - Initializing embedder with model sentence-transformers/all-MiniLM-L6-v2 on cpu
+2025-02-28 17:23:34 - src.document_processor.embedder - INFO - Model loaded successfully: sentence-transformers/all-MiniLM-L6-v2
+2025-02-28 17:23:35 - src.document_processor.embedder - INFO - Initializing embedder with model sentence-transformers/all-MiniLM-L6-v2 on cpu
+2025-02-28 17:23:35 - src.document_processor.embedder - INFO - Model loaded successfully: sentence-transformers/all-MiniLM-L6-v2
+2025-02-28 17:23:36 - src.document_processor.embedder - INFO - Model loaded successfully: sentence-transformers/all-MiniLM-L6-v2
+2025-02-28 17:23:36 - src.document_processor.embedder - INFO - Initializing embedder with model sentence-transformers/all-MiniLM-L6-v2 on cpu
+2025-02-28 17:23:37 - src.document_processor.embedder - INFO - Model loaded successfully: sentence-transformers/all-MiniLM-L6-v2
+2025-02-28 17:23:41 - src.document_processor.embedder - INFO - Initializing embedder with model sentence-transformers/all-MiniLM-L6-v2 on cpu
+2025-02-28 17:23:42 - src.document_processor.embedder - INFO - Model loaded successfully: sentence-transformers/all-MiniLM-L6-v2
+2025-02-28 17:33:38 - app.pages.upload_page - INFO - Successfully processed resume: 92069209.pdf
+2025-02-28 17:33:38 - app.pages.upload_page - INFO - Successfully processed resume: 91697974.pdf
+2025-02-28 17:33:38 - app.pages.upload_page - INFO - Successfully processed resume: 91635250.pdf
+2025-02-28 17:33:38 - app.pages.upload_page - INFO - Successfully processed resume: 91121135.pdf
+2025-02-28 17:33:39 - app.pages.upload_page - INFO - Successfully processed resume: 90867631.pdf
+2025-02-28 17:33:39 - app.pages.upload_page - INFO - Successfully processed resume: 89413122.pdf
+2025-02-28 17:33:39 - app.pages.upload_page - INFO - Successfully processed resume: 83816738.pdf
+2025-02-28 17:33:39 - app.pages.upload_page - INFO - Successfully processed resume: 81761658.pdf
+2025-02-28 17:33:39 - app.pages.upload_page - INFO - Successfully processed resume: 79541391.pdf
+2025-02-28 17:33:40 - app.pages.upload_page - INFO - Successfully processed resume: 70089206.pdf
+2025-02-28 17:33:40 - app.pages.upload_page - INFO - Successfully processed resume: 68460556.pdf
+2025-02-28 17:33:40 - app.pages.upload_page - INFO - Successfully processed resume: 66832845.pdf
+2025-02-28 17:33:40 - app.pages.upload_page - INFO - Successfully processed resume: 64017585.pdf
+2025-02-28 17:33:40 - app.pages.upload_page - INFO - Successfully processed resume: 57002858.pdf
+2025-02-28 17:33:40 - app.pages.upload_page - INFO - Successfully processed resume: 52618188.pdf
+2025-02-28 17:33:40 - app.pages.upload_page - INFO - Successfully processed resume: 52246737.pdf
+2025-02-28 17:33:41 - app.pages.upload_page - INFO - Successfully processed resume: 51639418.pdf
+2025-02-28 17:33:41 - app.pages.upload_page - INFO - Successfully processed resume: 51363762.pdf
+2025-02-28 17:33:41 - app.pages.upload_page - INFO - Successfully processed resume: 48037995.pdf
+2025-02-28 17:33:41 - app.pages.upload_page - INFO - Successfully processed resume: 46260230.pdf
+2025-02-28 17:33:41 - app.pages.upload_page - INFO - Successfully processed resume: 41344156.pdf
+2025-02-28 17:33:42 - app.pages.upload_page - INFO - Successfully processed resume: 40018190.pdf
+2025-02-28 17:33:42 - app.pages.upload_page - INFO - Successfully processed resume: 39718499.pdf
+2025-02-28 17:33:42 - app.pages.upload_page - INFO - Successfully processed resume: 39413067.pdf
+2025-02-28 17:33:42 - app.pages.upload_page - INFO - Successfully processed resume: 38753827.pdf
+2025-02-28 17:33:42 - app.pages.upload_page - INFO - Successfully processed resume: 37764298.pdf
+2025-02-28 17:33:42 - app.pages.upload_page - INFO - Successfully processed resume: 37242217.pdf
+2025-02-28 17:33:43 - app.pages.upload_page - INFO - Successfully processed resume: 36856210.pdf
+2025-02-28 17:33:44 - app.pages.upload_page - INFO - Successfully processed resume: 36434348.pdf
+2025-02-28 17:33:44 - app.pages.upload_page - INFO - Successfully processed resume: 35325329.pdf
+2025-02-28 17:33:44 - app.pages.upload_page - INFO - Successfully processed resume: 33381211.pdf
+2025-02-28 17:33:44 - app.pages.upload_page - INFO - Successfully processed resume: 33241454.pdf
+2025-02-28 17:33:44 - app.pages.upload_page - INFO - Successfully processed resume: 32959732.pdf
+2025-02-28 17:33:45 - app.pages.upload_page - INFO - Successfully processed resume: 31243710.pdf
+2025-02-28 17:33:45 - app.pages.upload_page - INFO - Successfully processed resume: 31111279.pdf
+2025-02-28 17:33:45 - app.pages.upload_page - INFO - Successfully processed resume: 30223363.pdf
+2025-02-28 17:33:45 - app.pages.upload_page - INFO - Successfully processed resume: 29975124.pdf
+2025-02-28 17:33:45 - app.pages.upload_page - INFO - Successfully processed resume: 29075857.pdf
+2025-02-28 17:33:46 - app.pages.upload_page - INFO - Successfully processed resume: 29051656.pdf
+2025-02-28 17:33:46 - app.pages.upload_page - INFO - Successfully processed resume: 28897981.pdf
+2025-02-28 17:33:46 - app.pages.upload_page - INFO - Successfully processed resume: 28697203.pdf
+2025-02-28 17:33:46 - app.pages.upload_page - INFO - Successfully processed resume: 28672970.pdf
+2025-02-28 17:33:46 - app.pages.upload_page - INFO - Successfully processed resume: 28126340.pdf
+2025-02-28 17:33:46 - app.pages.upload_page - INFO - Successfully processed resume: 28035460.pdf
+2025-02-28 17:33:46 - app.pages.upload_page - INFO - Successfully processed resume: 27770859.pdf
+2025-02-28 17:33:46 - app.pages.upload_page - INFO - Successfully processed resume: 27536013.pdf
+2025-02-28 17:33:47 - app.pages.upload_page - INFO - Successfully processed resume: 27485716.pdf
+2025-02-28 17:33:47 - app.pages.upload_page - INFO - Successfully processed resume: 27372171.pdf
+2025-02-28 17:33:47 - app.pages.upload_page - INFO - Successfully processed resume: 27295996.pdf
+2025-02-28 17:33:47 - app.pages.upload_page - INFO - Successfully processed resume: 27058381.pdf
+2025-02-28 17:33:47 - app.pages.upload_page - INFO - Successfully processed resume: 26801767.pdf
+2025-02-28 17:33:48 - app.pages.upload_page - INFO - Successfully processed resume: 26768723.pdf
+2025-02-28 17:33:48 - app.pages.upload_page - INFO - Successfully processed resume: 26746496.pdf
+2025-02-28 17:33:48 - app.pages.upload_page - INFO - Successfully processed resume: 26480367.pdf
+2025-02-28 17:33:48 - app.pages.upload_page - INFO - Successfully processed resume: 25990239.pdf
+2025-02-28 17:33:48 - app.pages.upload_page - INFO - Successfully processed resume: 25959103.pdf
+2025-02-28 17:33:48 - app.pages.upload_page - INFO - Successfully processed resume: 25905275.pdf
+2025-02-28 17:33:49 - app.pages.upload_page - INFO - Successfully processed resume: 25857360.pdf
+2025-02-28 17:33:49 - app.pages.upload_page - INFO - Successfully processed resume: 25207620.pdf
+2025-02-28 17:33:49 - app.pages.upload_page - INFO - Successfully processed resume: 24913648.pdf
+2025-02-28 17:33:49 - app.pages.upload_page - INFO - Successfully processed resume: 24889109.pdf
+2025-02-28 17:33:49 - app.pages.upload_page - INFO - Successfully processed resume: 24230851.pdf
+2025-02-28 17:33:49 - app.pages.upload_page - INFO - Successfully processed resume: 24083609.pdf
+2025-02-28 17:33:49 - app.pages.upload_page - INFO - Successfully processed resume: 24038620.pdf
+2025-02-28 17:33:50 - app.pages.upload_page - INFO - Successfully processed resume: 24020470.pdf
+2025-02-28 17:33:50 - app.pages.upload_page - INFO - Successfully processed resume: 23864648.pdf
+2025-02-28 17:33:50 - app.pages.upload_page - INFO - Successfully processed resume: 23666211.pdf
+2025-02-28 17:33:50 - app.pages.upload_page - INFO - Successfully processed resume: 23527321.pdf
+2025-02-28 17:33:50 - app.pages.upload_page - INFO - Successfully processed resume: 22776912.pdf
+2025-02-28 17:33:50 - app.pages.upload_page - INFO - Successfully processed resume: 22450718.pdf
+2025-02-28 17:33:50 - app.pages.upload_page - INFO - Successfully processed resume: 21780877.pdf
+2025-02-28 17:33:51 - app.pages.upload_page - INFO - Successfully processed resume: 21283365.pdf
+2025-02-28 17:33:51 - app.pages.upload_page - INFO - Successfully processed resume: 20879311.pdf
+2025-02-28 17:33:51 - app.pages.upload_page - INFO - Successfully processed resume: 20824105.pdf
+2025-02-28 17:33:51 - app.pages.upload_page - INFO - Successfully processed resume: 20674668.pdf
+2025-02-28 17:33:52 - app.pages.upload_page - INFO - Successfully processed resume: 20408458.pdf
+2025-02-28 17:33:52 - app.pages.upload_page - INFO - Successfully processed resume: 20237244.pdf
+2025-02-28 17:33:52 - app.pages.upload_page - INFO - Successfully processed resume: 20024870.pdf
+2025-02-28 17:33:52 - app.pages.upload_page - INFO - Successfully processed resume: 20001721.pdf
+2025-02-28 17:33:52 - app.pages.upload_page - INFO - Successfully processed resume: 19850482.pdf
+2025-02-28 17:33:53 - app.pages.upload_page - INFO - Successfully processed resume: 19796840.pdf
+2025-02-28 17:33:53 - app.pages.upload_page - INFO - Successfully processed resume: 19201175.pdf
+2025-02-28 17:33:53 - app.pages.upload_page - INFO - Successfully processed resume: 18752129.pdf
+2025-02-28 17:33:53 - app.pages.upload_page - INFO - Successfully processed resume: 18301617.pdf
+2025-02-28 17:33:53 - app.pages.upload_page - INFO - Successfully processed resume: 18187364.pdf
+2025-02-28 17:33:53 - app.pages.upload_page - INFO - Successfully processed resume: 18176523.pdf
+2025-02-28 17:33:54 - app.pages.upload_page - INFO - Successfully processed resume: 18159866.pdf
+2025-02-28 17:33:54 - app.pages.upload_page - INFO - Successfully processed resume: 18067556.pdf
+2025-02-28 17:33:54 - app.pages.upload_page - INFO - Successfully processed resume: 17987433.pdf
+2025-02-28 17:33:54 - app.pages.upload_page - INFO - Successfully processed resume: 17688766.pdf
+2025-02-28 17:33:54 - app.pages.upload_page - INFO - Successfully processed resume: 17681064.pdf
+2025-02-28 17:33:55 - app.pages.upload_page - INFO - Successfully processed resume: 17641670.pdf
+2025-02-28 17:33:55 - app.pages.upload_page - INFO - Successfully processed resume: 17111768.pdf
+2025-02-28 17:33:55 - app.pages.upload_page - INFO - Successfully processed resume: 16899268.pdf
+2025-02-28 17:33:55 - app.pages.upload_page - INFO - Successfully processed resume: 16533554.pdf
+2025-02-28 17:33:55 - app.pages.upload_page - INFO - Successfully processed resume: 16186411.pdf
+2025-02-28 17:33:55 - app.pages.upload_page - INFO - Successfully processed resume: 15802627.pdf
+2025-02-28 17:33:56 - app.pages.upload_page - INFO - Successfully processed resume: 15791766.pdf
+2025-02-28 17:33:56 - app.pages.upload_page - INFO - Successfully processed resume: 15651486.pdf
+2025-02-28 17:33:56 - app.pages.upload_page - INFO - Successfully processed resume: 15297298.pdf
+2025-02-28 17:33:56 - app.pages.upload_page - INFO - Successfully processed resume: 15118506.pdf
+2025-02-28 17:33:56 - app.pages.upload_page - INFO - Successfully processed resume: 14789139.pdf
+2025-02-28 17:33:56 - app.pages.upload_page - INFO - Successfully processed resume: 13836471.pdf
+2025-02-28 17:33:56 - app.pages.upload_page - INFO - Successfully processed resume: 13477922.pdf
+2025-02-28 17:33:57 - app.pages.upload_page - INFO - Successfully processed resume: 13405733.pdf
+2025-02-28 17:33:57 - app.pages.upload_page - INFO - Successfully processed resume: 13385306.pdf
+2025-02-28 17:33:57 - app.pages.upload_page - INFO - Successfully processed resume: 12763627.pdf
+2025-02-28 17:33:57 - app.pages.upload_page - INFO - Successfully processed resume: 12635195.pdf
+2025-02-28 17:33:57 - app.pages.upload_page - INFO - Successfully processed resume: 12334140.pdf
+2025-02-28 17:33:57 - app.pages.upload_page - INFO - Successfully processed resume: 12045067.pdf
+2025-02-28 17:33:58 - app.pages.upload_page - INFO - Successfully processed resume: 11957080.pdf
+2025-02-28 17:33:58 - app.pages.upload_page - INFO - Successfully processed resume: 11584809.pdf
+2025-02-28 17:33:58 - app.pages.upload_page - INFO - Successfully processed resume: 11580408.pdf
+2025-02-28 17:33:59 - app.pages.upload_page - INFO - Successfully processed resume: 10840430.pdf
+2025-02-28 17:33:59 - app.pages.upload_page - INFO - Successfully processed resume: 10839851.pdf
+2025-02-28 17:33:59 - app.pages.upload_page - INFO - Successfully processed resume: 10641230.pdf
+2025-02-28 17:33:59 - app.pages.upload_page - INFO - Successfully processed resume: 10553553.pdf
+2025-02-28 17:33:59 - app.pages.upload_page - INFO - Successfully processed resume: 10265057.pdf
+2025-02-28 17:33:59 - app.pages.upload_page - INFO - Successfully processed resume: 10247517.pdf
+2025-02-28 17:34:00 - app.pages.upload_page - INFO - Successfully processed resume: 10089434.pdf
+2025-02-28 17:34:52 - app.pages.upload_page - INFO - All documents cleared from storage
+2025-02-28 17:34:52 - app.pages.upload_page - INFO - Loaded 0 resumes from storage
+2025-02-28 17:34:52 - app.pages.upload_page - INFO - Loaded 0 job descriptions from storage
+2025-02-28 17:35:00 - app.pages.upload_page - INFO - Loaded 0 resumes from storage
+2025-02-28 17:35:00 - app.pages.upload_page - INFO - Loaded 0 job descriptions from storage
+2025-02-28 17:35:07 - app.pages.upload_page - INFO - Loaded 0 resumes from storage
+2025-02-28 17:35:07 - app.pages.upload_page - INFO - Loaded 0 job descriptions from storage
+2025-02-28 17:35:09 - app.pages.upload_page - INFO - Loaded 0 resumes from storage
+2025-02-28 17:35:09 - app.pages.upload_page - INFO - Loaded 0 job descriptions from storage
+2025-02-28 17:35:09 - app.pages.upload_page - INFO - Successfully processed resume: 92069209.pdf
+2025-02-28 17:35:09 - app.pages.upload_page - INFO - Successfully processed resume: 91697974.pdf
+2025-02-28 17:35:09 - app.pages.upload_page - INFO - Successfully processed resume: 91635250.pdf
+2025-02-28 17:35:09 - app.pages.upload_page - INFO - Successfully processed resume: 91121135.pdf
+2025-02-28 17:35:10 - app.pages.upload_page - INFO - Successfully processed resume: 90867631.pdf
+2025-02-28 17:35:10 - app.pages.upload_page - INFO - Successfully processed resume: 89413122.pdf
+2025-02-28 17:35:10 - app.pages.upload_page - INFO - Successfully processed resume: 83816738.pdf
+2025-02-28 17:35:10 - app.pages.upload_page - INFO - Successfully processed resume: 81761658.pdf
+2025-02-28 17:35:10 - app.pages.upload_page - INFO - Successfully processed resume: 79541391.pdf
+2025-02-28 17:35:11 - app.pages.upload_page - INFO - Successfully processed resume: 70089206.pdf
+2025-02-28 17:35:11 - app.pages.upload_page - INFO - Successfully processed resume: 68460556.pdf
+2025-02-28 17:35:11 - app.pages.upload_page - INFO - Successfully processed resume: 66832845.pdf
+2025-02-28 17:35:11 - app.pages.upload_page - INFO - Successfully processed resume: 64017585.pdf
+2025-02-28 17:35:11 - app.pages.upload_page - INFO - Successfully processed resume: 57002858.pdf
+2025-02-28 17:35:11 - app.pages.upload_page - INFO - Successfully processed resume: 52618188.pdf
+2025-02-28 17:35:11 - app.pages.upload_page - INFO - Successfully processed resume: 52246737.pdf
+2025-02-28 17:35:12 - app.pages.upload_page - INFO - Successfully processed resume: 51639418.pdf
+2025-02-28 17:35:12 - app.pages.upload_page - INFO - Successfully processed resume: 51363762.pdf
+2025-02-28 17:35:12 - app.pages.upload_page - INFO - Successfully processed resume: 48037995.pdf
+2025-02-28 17:35:12 - app.pages.upload_page - INFO - Successfully processed resume: 46260230.pdf
+2025-02-28 17:35:12 - app.pages.upload_page - INFO - Successfully processed resume: 41344156.pdf
+2025-02-28 17:35:12 - app.pages.upload_page - INFO - Successfully processed resume: 40018190.pdf
+2025-02-28 17:35:13 - app.pages.upload_page - INFO - Successfully processed resume: 39718499.pdf
+2025-02-28 17:35:13 - app.pages.upload_page - INFO - Successfully processed resume: 39413067.pdf
+2025-02-28 17:35:13 - app.pages.upload_page - INFO - Successfully processed resume: 38753827.pdf
+2025-02-28 17:35:13 - app.pages.upload_page - INFO - Successfully processed resume: 37764298.pdf
+2025-02-28 17:35:14 - app.pages.upload_page - INFO - Successfully processed resume: 37242217.pdf
+2025-02-28 17:35:14 - app.pages.upload_page - INFO - Successfully processed resume: 36856210.pdf
+2025-02-28 17:35:14 - app.pages.upload_page - INFO - Successfully processed resume: 36434348.pdf
+2025-02-28 17:35:14 - app.pages.upload_page - INFO - Successfully processed resume: 35325329.pdf
+2025-02-28 17:35:15 - app.pages.upload_page - INFO - Successfully processed resume: 33381211.pdf
+2025-02-28 17:35:15 - app.pages.upload_page - INFO - Successfully processed resume: 33241454.pdf
+2025-02-28 17:35:15 - app.pages.upload_page - INFO - Successfully processed resume: 32959732.pdf
+2025-02-28 17:35:15 - app.pages.upload_page - INFO - Successfully processed resume: 31243710.pdf
+2025-02-28 17:35:15 - app.pages.upload_page - INFO - Successfully processed resume: 31111279.pdf
+2025-02-28 17:35:15 - app.pages.upload_page - INFO - Successfully processed resume: 30223363.pdf
+2025-02-28 17:35:16 - app.pages.upload_page - INFO - Successfully processed resume: 29975124.pdf
+2025-02-28 17:35:16 - app.pages.upload_page - INFO - Successfully processed resume: 29075857.pdf
+2025-02-28 17:35:16 - app.pages.upload_page - INFO - Successfully processed resume: 29051656.pdf
+2025-02-28 17:35:16 - app.pages.upload_page - INFO - Successfully processed resume: 28897981.pdf
+2025-02-28 17:35:16 - app.pages.upload_page - INFO - Successfully processed resume: 28697203.pdf
+2025-02-28 17:35:16 - app.pages.upload_page - INFO - Successfully processed resume: 28672970.pdf
+2025-02-28 17:35:17 - app.pages.upload_page - INFO - Successfully processed resume: 28126340.pdf
+2025-02-28 17:35:17 - app.pages.upload_page - INFO - Successfully processed resume: 28035460.pdf
+2025-02-28 17:35:17 - app.pages.upload_page - INFO - Successfully processed resume: 27770859.pdf
+2025-02-28 17:35:17 - app.pages.upload_page - INFO - Successfully processed resume: 27536013.pdf
+2025-02-28 17:35:17 - app.pages.upload_page - INFO - Successfully processed resume: 27485716.pdf
+2025-02-28 17:35:17 - app.pages.upload_page - INFO - Successfully processed resume: 27372171.pdf
+2025-02-28 17:35:18 - app.pages.upload_page - INFO - Successfully processed resume: 27295996.pdf
+2025-02-28 17:35:18 - app.pages.upload_page - INFO - Successfully processed resume: 27058381.pdf
+2025-02-28 17:35:18 - app.pages.upload_page - INFO - Successfully processed resume: 26801767.pdf
+2025-02-28 17:35:18 - app.pages.upload_page - INFO - Successfully processed resume: 26768723.pdf
+2025-02-28 17:35:18 - app.pages.upload_page - INFO - Successfully processed resume: 26746496.pdf
+2025-02-28 17:35:18 - app.pages.upload_page - INFO - Successfully processed resume: 26480367.pdf
+2025-02-28 17:35:19 - app.pages.upload_page - INFO - Successfully processed resume: 25990239.pdf
+2025-02-28 17:35:19 - app.pages.upload_page - INFO - Successfully processed resume: 25959103.pdf
+2025-02-28 17:35:19 - app.pages.upload_page - INFO - Successfully processed resume: 25905275.pdf
+2025-02-28 17:35:19 - app.pages.upload_page - INFO - Successfully processed resume: 25857360.pdf
+2025-02-28 17:35:19 - app.pages.upload_page - INFO - Successfully processed resume: 25207620.pdf
+2025-02-28 17:35:19 - app.pages.upload_page - INFO - Successfully processed resume: 24913648.pdf
+2025-02-28 17:35:19 - app.pages.upload_page - INFO - Successfully processed resume: 24889109.pdf
+2025-02-28 17:35:19 - app.pages.upload_page - INFO - Successfully processed resume: 24230851.pdf
+2025-02-28 17:35:20 - app.pages.upload_page - INFO - Successfully processed resume: 24083609.pdf
+2025-02-28 17:35:20 - app.pages.upload_page - INFO - Successfully processed resume: 24038620.pdf
+2025-02-28 17:35:20 - app.pages.upload_page - INFO - Successfully processed resume: 24020470.pdf
+2025-02-28 17:35:20 - app.pages.upload_page - INFO - Successfully processed resume: 23864648.pdf
+2025-02-28 17:35:20 - app.pages.upload_page - INFO - Successfully processed resume: 23666211.pdf
+2025-02-28 17:35:20 - app.pages.upload_page - INFO - Successfully processed resume: 23527321.pdf
+2025-02-28 17:35:20 - app.pages.upload_page - INFO - Successfully processed resume: 22776912.pdf
+2025-02-28 17:35:21 - app.pages.upload_page - INFO - Successfully processed resume: 22450718.pdf
+2025-02-28 17:35:21 - app.pages.upload_page - INFO - Successfully processed resume: 21780877.pdf
+2025-02-28 17:35:21 - app.pages.upload_page - INFO - Successfully processed resume: 21283365.pdf
+2025-02-28 17:35:21 - app.pages.upload_page - INFO - Successfully processed resume: 20879311.pdf
+2025-02-28 17:35:22 - app.pages.upload_page - INFO - Successfully processed resume: 20824105.pdf
+2025-02-28 17:35:22 - app.pages.upload_page - INFO - Successfully processed resume: 20674668.pdf
+2025-02-28 17:35:22 - app.pages.upload_page - INFO - Successfully processed resume: 20408458.pdf
+2025-02-28 17:35:22 - app.pages.upload_page - INFO - Successfully processed resume: 20237244.pdf
+2025-02-28 17:35:22 - app.pages.upload_page - INFO - Successfully processed resume: 20024870.pdf
+2025-02-28 17:35:23 - app.pages.upload_page - INFO - Successfully processed resume: 20001721.pdf
+2025-02-28 17:35:23 - app.pages.upload_page - INFO - Successfully processed resume: 19850482.pdf
+2025-02-28 17:35:23 - app.pages.upload_page - INFO - Successfully processed resume: 19796840.pdf
+2025-02-28 17:35:23 - app.pages.upload_page - INFO - Successfully processed resume: 19201175.pdf
+2025-02-28 17:35:23 - app.pages.upload_page - INFO - Successfully processed resume: 18752129.pdf
+2025-02-28 17:35:23 - app.pages.upload_page - INFO - Successfully processed resume: 18301617.pdf
+2025-02-28 17:35:24 - app.pages.upload_page - INFO - Successfully processed resume: 18187364.pdf
+2025-02-28 17:35:24 - app.pages.upload_page - INFO - Successfully processed resume: 18176523.pdf
+2025-02-28 17:35:24 - app.pages.upload_page - INFO - Successfully processed resume: 18159866.pdf
+2025-02-28 17:35:24 - app.pages.upload_page - INFO - Successfully processed resume: 18067556.pdf
+2025-02-28 17:35:24 - app.pages.upload_page - INFO - Successfully processed resume: 17987433.pdf
+2025-02-28 17:35:25 - app.pages.upload_page - INFO - Successfully processed resume: 17688766.pdf
+2025-02-28 17:35:25 - app.pages.upload_page - INFO - Successfully processed resume: 17681064.pdf
+2025-02-28 17:35:25 - app.pages.upload_page - INFO - Successfully processed resume: 17641670.pdf
+2025-02-28 17:35:25 - app.pages.upload_page - INFO - Successfully processed resume: 17111768.pdf
+2025-02-28 17:35:25 - app.pages.upload_page - INFO - Successfully processed resume: 16899268.pdf
+2025-02-28 17:35:25 - app.pages.upload_page - INFO - Successfully processed resume: 16533554.pdf
+2025-02-28 17:35:26 - app.pages.upload_page - INFO - Successfully processed resume: 16186411.pdf
+2025-02-28 17:35:26 - app.pages.upload_page - INFO - Successfully processed resume: 15802627.pdf
+2025-02-28 17:35:26 - app.pages.upload_page - INFO - Successfully processed resume: 15791766.pdf
+2025-02-28 17:35:26 - app.pages.upload_page - INFO - Successfully processed resume: 15651486.pdf
+2025-02-28 17:35:26 - app.pages.upload_page - INFO - Successfully processed resume: 15297298.pdf
+2025-02-28 17:35:26 - app.pages.upload_page - INFO - Successfully processed resume: 15118506.pdf
+2025-02-28 17:35:27 - app.pages.upload_page - INFO - Successfully processed resume: 14789139.pdf
+2025-02-28 17:35:27 - app.pages.upload_page - INFO - Successfully processed resume: 13836471.pdf
+2025-02-28 17:35:27 - app.pages.upload_page - INFO - Successfully processed resume: 13477922.pdf
+2025-02-28 17:35:27 - app.pages.upload_page - INFO - Successfully processed resume: 13405733.pdf
+2025-02-28 17:35:27 - app.pages.upload_page - INFO - Successfully processed resume: 13385306.pdf
+2025-02-28 17:35:27 - app.pages.upload_page - INFO - Successfully processed resume: 12763627.pdf
+2025-02-28 17:35:27 - app.pages.upload_page - INFO - Successfully processed resume: 12635195.pdf
+2025-02-28 17:35:28 - app.pages.upload_page - INFO - Successfully processed resume: 12334140.pdf
+2025-02-28 17:35:28 - app.pages.upload_page - INFO - Successfully processed resume: 12045067.pdf
+2025-02-28 17:35:28 - app.pages.upload_page - INFO - Successfully processed resume: 11957080.pdf
+2025-02-28 17:35:28 - app.pages.upload_page - INFO - Successfully processed resume: 11584809.pdf
+2025-02-28 17:35:28 - app.pages.upload_page - INFO - Successfully processed resume: 11580408.pdf
+2025-02-28 17:35:28 - app.pages.upload_page - INFO - Successfully processed resume: 10840430.pdf
+2025-02-28 17:35:28 - app.pages.upload_page - INFO - Successfully processed resume: 10839851.pdf
+2025-02-28 17:35:29 - app.pages.upload_page - INFO - Successfully processed resume: 10641230.pdf
+2025-02-28 17:35:29 - app.pages.upload_page - INFO - Successfully processed resume: 10553553.pdf
+2025-02-28 17:35:29 - app.pages.upload_page - INFO - Successfully processed resume: 10265057.pdf
+2025-02-28 17:35:29 - app.pages.upload_page - INFO - Successfully processed resume: 10247517.pdf
+2025-02-28 17:35:29 - app.pages.upload_page - INFO - Successfully processed resume: 10089434.pdf
+2025-02-28 17:35:46 - app.pages.upload_page - INFO - Loaded 0 job descriptions from storage
+2025-02-28 17:35:48 - app.pages.upload_page - INFO - Loaded 0 job descriptions from storage
+2025-02-28 17:35:48 - app.pages.upload_page - INFO - Successfully processed job_description: jobdescription.txt
+2025-02-28 17:36:16 - src.document_processor.embedder - INFO - Initializing embedder with model sentence-transformers/all-MiniLM-L6-v2 on cpu
+2025-02-28 17:36:18 - src.document_processor.embedder - INFO - Model loaded successfully: sentence-transformers/all-MiniLM-L6-v2
+2025-02-28 17:36:19 - src.document_processor.embedder - INFO - Initializing embedder with model sentence-transformers/all-MiniLM-L6-v2 on cpu
+2025-02-28 17:36:21 - src.document_processor.embedder - INFO - Model loaded successfully: sentence-transformers/all-MiniLM-L6-v2
+2025-02-28 17:36:36 - src.document_processor.embedder - INFO - Initializing embedder with model sentence-transformers/all-MiniLM-L6-v2 on cpu
+2025-02-28 17:36:36 - src.document_processor.embedder - INFO - Initializing embedder with model sentence-transformers/all-MiniLM-L6-v2 on cpu
+2025-02-28 17:36:36 - src.document_processor.embedder - INFO - Model loaded successfully: sentence-transformers/all-MiniLM-L6-v2
+2025-02-28 17:36:37 - src.document_processor.embedder - INFO - Model loaded successfully: sentence-transformers/all-MiniLM-L6-v2
+2025-02-28 17:36:38 - src.document_processor.embedder - INFO - Initializing embedder with model sentence-transformers/all-MiniLM-L6-v2 on cpu
+2025-02-28 17:36:39 - src.document_processor.embedder - INFO - Model loaded successfully: sentence-transformers/all-MiniLM-L6-v2
+2025-02-28 17:36:48 - src.document_processor.embedder - INFO - Initializing embedder with model sentence-transformers/all-MiniLM-L6-v2 on cpu
+2025-02-28 17:36:49 - src.document_processor.embedder - INFO - Initializing embedder with model sentence-transformers/all-MiniLM-L6-v2 on cpu
+2025-02-28 17:36:49 - src.document_processor.embedder - INFO - Model loaded successfully: sentence-transformers/all-MiniLM-L6-v2
+2025-02-28 17:36:50 - src.document_processor.embedder - INFO - Model loaded successfully: sentence-transformers/all-MiniLM-L6-v2
+2025-02-28 17:36:51 - src.document_processor.embedder - INFO - Initializing embedder with model sentence-transformers/all-MiniLM-L6-v2 on cpu
+2025-02-28 17:36:52 - src.document_processor.embedder - INFO - Model loaded successfully: sentence-transformers/all-MiniLM-L6-v2
+2025-02-28 17:37:04 - src.document_processor.embedder - INFO - Initializing embedder with model sentence-transformers/all-MiniLM-L6-v2 on cpu
+2025-02-28 17:37:04 - src.document_processor.embedder - INFO - Initializing embedder with model sentence-transformers/all-MiniLM-L6-v2 on cpu
+2025-02-28 17:37:05 - src.document_processor.embedder - INFO - Model loaded successfully: sentence-transformers/all-MiniLM-L6-v2
+2025-02-28 17:37:05 - src.document_processor.embedder - INFO - Model loaded successfully: sentence-transformers/all-MiniLM-L6-v2
+2025-02-28 17:37:06 - src.document_processor.embedder - INFO - Initializing embedder with model sentence-transformers/all-MiniLM-L6-v2 on cpu
+2025-02-28 17:37:07 - src.document_processor.embedder - INFO - Model loaded successfully: sentence-transformers/all-MiniLM-L6-v2
+2025-02-28 17:37:53 - src.nlp.summarizer - INFO - Initializing summarizer with model facebook/bart-large-cnn on cpu
+2025-02-28 17:38:05 - src.nlp.summarizer - INFO - Summarizer initialized successfully
+2025-02-28 17:38:05 - src.nlp.summarizer - INFO - Text too long (1235 tokens), splitting into chunks
+2025-02-28 17:38:15 - src.nlp.summarizer - INFO - Combined chunk summaries still too long, summarizing again
+2025-02-28 17:38:20 - src.nlp.summarizer - INFO - Initializing summarizer with model facebook/bart-large-cnn on cpu
+2025-02-28 17:38:27 - src.nlp.summarizer - INFO - Summarizer initialized successfully
+2025-02-28 17:39:36 - app.pages.interview_page - ERROR - Error with Gemini API: 404 models/gemini-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.

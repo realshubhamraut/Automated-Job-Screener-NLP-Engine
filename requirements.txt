@@ -1,0 +1,16 @@
+streamlit
+streamlit_option_menu
+PyPDF2
+torch
+python-docx
+pandas
+plotly
+numpy
+scikit-learn
+spacy
+sentence-transformers
+nltk
+pytesseract
+Pillow
+faiss-cpu
+wordcloud

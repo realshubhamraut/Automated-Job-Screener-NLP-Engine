@@ -1,0 +1,21 @@
+2025-02-28 08:14:43 - root - INFO - Logging initialized. Log file: /Users/proxim/Desktop/Automated-First-Screener-and-AI-Job-Matching-NLP-WebEngine/logs/app_log_20250228_081443.log
+2025-02-28 08:15:01 - app.pages.upload_page - INFO - Successfully processed resume: resume.pdf
+2025-02-28 08:15:04 - app.pages.upload_page - INFO - Successfully processed job_description: jobdescription.txt
+2025-02-28 08:15:15 - src.document_processor.embedder - INFO - Initializing embedder with model sentence-transformers/all-MiniLM-L6-v2 on cpu
+2025-02-28 08:15:16 - src.document_processor.embedder - INFO - Model loaded successfully: sentence-transformers/all-MiniLM-L6-v2
+2025-02-28 08:15:18 - src.document_processor.embedder - INFO - Initializing embedder with model sentence-transformers/all-MiniLM-L6-v2 on cpu
+2025-02-28 08:15:19 - src.document_processor.embedder - INFO - Model loaded successfully: sentence-transformers/all-MiniLM-L6-v2
+2025-02-28 08:15:24 - src.nlp.summarizer - INFO - Initializing summarizer with model facebook/bart-large-cnn on cpu
+2025-02-28 08:15:32 - src.nlp.summarizer - INFO - Summarizer initialized successfully
+2025-02-28 08:15:32 - src.nlp.summarizer - INFO - Text too long (3823 tokens), splitting into chunks
+2025-02-28 08:15:52 - src.nlp.summarizer - INFO - Combined chunk summaries still too long, summarizing again
+2025-02-28 08:15:57 - src.nlp.summarizer - INFO - Initializing summarizer with model facebook/bart-large-cnn on cpu
+2025-02-28 08:16:03 - src.nlp.summarizer - INFO - Summarizer initialized successfully
+2025-02-28 08:20:36 - app.pages.upload_page - INFO - Successfully processed resume: resume.pdf
+2025-02-28 08:20:44 - app.pages.upload_page - INFO - Successfully processed job_description: jobdescription.txt
+2025-02-28 08:20:47 - src.document_processor.embedder - INFO - Initializing embedder with model sentence-transformers/all-MiniLM-L6-v2 on cpu
+2025-02-28 08:20:49 - src.document_processor.embedder - INFO - Model loaded successfully: sentence-transformers/all-MiniLM-L6-v2
+2025-02-28 08:23:58 - app.pages.upload_page - INFO - Successfully processed resume: resume.pdf
+2025-02-28 08:24:02 - app.pages.upload_page - INFO - Successfully processed job_description: jobdescription.txt
+2025-02-28 08:25:04 - src.document_processor.embedder - INFO - Initializing embedder with model sentence-transformers/all-MiniLM-L6-v2 on cpu
+2025-02-28 08:25:06 - src.document_processor.embedder - INFO - Model loaded successfully: sentence-transformers/all-MiniLM-L6-v2

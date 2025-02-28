@@ -1,0 +1,37 @@
+2025-02-28 16:49:25 - root - INFO - Logging initialized. Log file: /Users/proxim/Desktop/Automated-First-Screener-and-AI-Job-Matching-NLP-WebEngine/logs/app_log_20250228_164925.log
+2025-02-28 16:49:34 - app.pages.upload_page - INFO - Loaded 1 resumes from storage
+2025-02-28 16:49:34 - app.pages.upload_page - INFO - Loaded 1 job descriptions from storage
+2025-02-28 16:50:13 - app.pages.upload_page - INFO - All documents cleared from storage
+2025-02-28 16:50:14 - app.pages.upload_page - INFO - Loaded 0 resumes from storage
+2025-02-28 16:50:14 - app.pages.upload_page - INFO - Loaded 0 job descriptions from storage
+2025-02-28 16:50:57 - app.pages.upload_page - INFO - Loaded 0 resumes from storage
+2025-02-28 16:50:57 - app.pages.upload_page - INFO - Loaded 0 job descriptions from storage
+2025-02-28 16:51:02 - app.pages.upload_page - INFO - Loaded 0 resumes from storage
+2025-02-28 16:51:02 - app.pages.upload_page - INFO - Loaded 0 job descriptions from storage
+2025-02-28 16:51:03 - app.pages.upload_page - INFO - Loaded 0 resumes from storage
+2025-02-28 16:51:03 - app.pages.upload_page - INFO - Loaded 0 job descriptions from storage
+2025-02-28 16:51:05 - app.pages.upload_page - INFO - Successfully processed job_description: jobdescription.txt
+2025-02-28 16:51:06 - app.pages.upload_page - INFO - Loaded 0 resumes from storage
+2025-02-28 16:51:06 - app.pages.upload_page - INFO - Successfully processed resume: resume.pdf
+2025-02-28 16:51:21 - src.document_processor.embedder - INFO - Initializing embedder with model sentence-transformers/all-MiniLM-L6-v2 on cpu
+2025-02-28 16:51:22 - src.document_processor.embedder - INFO - Model loaded successfully: sentence-transformers/all-MiniLM-L6-v2
+2025-02-28 16:51:31 - src.document_processor.embedder - INFO - Initializing embedder with model sentence-transformers/all-MiniLM-L6-v2 on cpu
+2025-02-28 16:51:31 - src.document_processor.embedder - INFO - Initializing embedder with model sentence-transformers/all-MiniLM-L6-v2 on cpu
+2025-02-28 16:51:32 - src.document_processor.embedder - INFO - Model loaded successfully: sentence-transformers/all-MiniLM-L6-v2
+2025-02-28 16:51:32 - src.document_processor.embedder - INFO - Initializing embedder with model sentence-transformers/all-MiniLM-L6-v2 on cpu
+2025-02-28 16:51:32 - src.document_processor.embedder - INFO - Model loaded successfully: sentence-transformers/all-MiniLM-L6-v2
+2025-02-28 16:51:33 - src.document_processor.embedder - INFO - Model loaded successfully: sentence-transformers/all-MiniLM-L6-v2
+2025-02-28 16:51:35 - src.document_processor.embedder - INFO - Initializing embedder with model sentence-transformers/all-MiniLM-L6-v2 on cpu
+2025-02-28 16:51:36 - src.document_processor.embedder - INFO - Model loaded successfully: sentence-transformers/all-MiniLM-L6-v2
+2025-02-28 16:52:40 - src.nlp.summarizer - INFO - Initializing summarizer with model facebook/bart-large-cnn on cpu
+2025-02-28 16:52:48 - src.nlp.summarizer - INFO - Summarizer initialized successfully
+2025-02-28 16:52:48 - src.nlp.summarizer - INFO - Text too long (3823 tokens), splitting into chunks
+2025-02-28 16:53:06 - src.nlp.summarizer - INFO - Combined chunk summaries still too long, summarizing again
+2025-02-28 16:53:10 - src.nlp.summarizer - INFO - Initializing summarizer with model facebook/bart-large-cnn on cpu
+2025-02-28 16:53:17 - src.nlp.summarizer - INFO - Summarizer initialized successfully
+2025-02-28 16:54:08 - src.document_processor.embedder - INFO - Initializing embedder with model sentence-transformers/all-MiniLM-L6-v2 on cpu
+2025-02-28 16:54:09 - src.document_processor.embedder - INFO - Model loaded successfully: sentence-transformers/all-MiniLM-L6-v2
+2025-02-28 16:54:12 - src.document_processor.embedder - INFO - Initializing embedder with model sentence-transformers/all-MiniLM-L6-v2 on cpu
+2025-02-28 16:54:13 - src.document_processor.embedder - INFO - Model loaded successfully: sentence-transformers/all-MiniLM-L6-v2
+2025-02-28 16:54:15 - src.document_processor.embedder - INFO - Initializing embedder with model sentence-transformers/all-MiniLM-L6-v2 on cpu
+2025-02-28 16:54:16 - src.document_processor.embedder - INFO - Model loaded successfully: sentence-transformers/all-MiniLM-L6-v2

@@ -1,0 +1,8 @@
+2025-02-27 20:43:46 - root - INFO - Logging initialized. Log file: /Users/proxim/Desktop/Automated-First-Screener-and-AI-Job-Matching-NLP-WebEngine/logs/app_log_20250227_204346.log
+2025-02-27 20:44:46 - app.pages.upload_page - INFO - Successfully processed resume: resume.pdf
+2025-02-27 20:44:52 - app.pages.upload_page - INFO - Successfully processed job_description: jobdescription.txt
+2025-02-27 20:45:00 - src.document_processor.embedder - INFO - Initializing embedder with model sentence-transformers/all-MiniLM-L6-v2 on cpu
+2025-02-27 20:45:02 - src.document_processor.embedder - INFO - Model loaded successfully: sentence-transformers/all-MiniLM-L6-v2
+2025-02-27 20:45:07 - src.document_processor.embedder - INFO - Initializing embedder with model sentence-transformers/all-MiniLM-L6-v2 on cpu
+2025-02-27 20:45:08 - src.document_processor.embedder - INFO - Model loaded successfully: sentence-transformers/all-MiniLM-L6-v2
+2025-02-27 20:45:48 - src.nlp.summarizer - INFO - Initializing summarizer with model facebook/bart-large-cnn on cpu

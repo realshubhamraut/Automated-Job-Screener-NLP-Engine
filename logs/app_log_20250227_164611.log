@@ -1,0 +1,19 @@
+2025-02-27 16:46:11 - root - INFO - Logging initialized. Log file: /Users/proxim/Desktop/Automated-First-Screener-and-AI-Job-Matching-NLP-WebEngine/logs/app_log_20250227_164611.log
+2025-02-27 16:46:14 - faiss.loader - INFO - Loading faiss.
+2025-02-27 16:46:14 - faiss.loader - INFO - Successfully loaded faiss.
+2025-02-27 16:46:14 - faiss - INFO - Failed to load GPU Faiss: name 'GpuIndexIVFFlat' is not defined. Will not load constructor refs for GPU indexes.
+2025-02-27 16:46:31 - app.pages.upload_page - INFO - Successfully processed resume: resume.pdf
+2025-02-27 16:46:39 - app.pages.upload_page - INFO - Successfully processed job_description: jobdescription.txt
+2025-02-27 16:47:04 - src.document_processor.embedder - INFO - Initializing embedder with model sentence-transformers/all-MiniLM-L6-v2 on cpu
+2025-02-27 16:47:07 - src.document_processor.embedder - INFO - Model loaded successfully: sentence-transformers/all-MiniLM-L6-v2
+2025-02-27 16:47:07 - app.pages.matching_page - ERROR - Error initializing NLP models: __init__() got multiple values for argument 'hybrid_weight'
+2025-02-27 16:48:28 - src.document_processor.embedder - INFO - Initializing embedder with model sentence-transformers/all-MiniLM-L6-v2 on cpu
+2025-02-27 16:48:29 - src.document_processor.embedder - INFO - Model loaded successfully: sentence-transformers/all-MiniLM-L6-v2
+2025-02-27 16:48:29 - app.pages.matching_page - ERROR - Error initializing NLP models: __init__() got multiple values for argument 'hybrid_weight'
+2025-02-27 16:48:32 - src.document_processor.embedder - INFO - Initializing embedder with model sentence-transformers/all-MiniLM-L6-v2 on cpu
+2025-02-27 16:48:33 - src.document_processor.embedder - INFO - Model loaded successfully: sentence-transformers/all-MiniLM-L6-v2
+2025-02-27 16:48:33 - app.pages.matching_page - ERROR - Error initializing NLP models: __init__() got multiple values for argument 'hybrid_weight'
+2025-02-27 16:49:58 - src.document_processor.embedder - INFO - Initializing embedder with model sentence-transformers/all-MiniLM-L6-v2 on cpu
+2025-02-27 16:49:59 - src.document_processor.embedder - INFO - Model loaded successfully: sentence-transformers/all-MiniLM-L6-v2
+2025-02-27 16:49:59 - app.pages.matching_page - ERROR - Error initializing NLP models: __init__() got multiple values for argument 'hybrid_weight'
+2025-02-27 16:49:59 - src.nlp.summarizer - INFO - Initializing summarizer with model facebook/bart-large-cnn on cpu

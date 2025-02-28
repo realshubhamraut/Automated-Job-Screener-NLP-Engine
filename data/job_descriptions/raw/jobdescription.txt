@@ -1,0 +1,72 @@
+About the job
+We are looking for a detail-oriented and analytical Data Analyst to join our team. The ideal candidate will be responsible for collecting, analyzing, and interpreting complex datasets to support data-driven decision-making across various business functions. This role requires a strong ability to translate raw data into meaningful insights that drive operational efficiency and business growth.
+
+
+
+Responsibilities:
+
+ • Gather, clean, and preprocess data from multiple sources to ensure accuracy and reliability.
+
+ • Conduct exploratory data analysis and generate insights to support business strategy.
+
+ • Develop and maintain dashboards, reports, and visualizations using Tableau, Power BI, Looker, or similar BI tools.
+
+ • Write and optimize SQL queries to extract, transform, and analyze large datasets.
+
+ • Utilize Python, R, or Excel for statistical analysis, forecasting, and automation.
+
+ • Work closely with cross-functional teams, including engineering, marketing, finance, and product teams, to provide actionable insights.
+
+ • Identify trends, anomalies, and key performance indicators (KPIs) to inform business decisions.
+
+ • Support A/B testing and data-driven experiments to optimize processes and improve performance.
+
+ • Maintain documentation for data analysis processes, metrics definitions, and reporting standards.
+
+ • Ensure compliance with data privacy regulations and security best practices.
+
+
+
+Requirements:
+
+ • Bachelor’s or Master’s degree in Statistics, Data Science, Computer Science, Mathematics, Economics, or a related field.
+
+ • Proficiency in SQL for data extraction and manipulation.
+
+ • Hands-on experience with data visualization tools such as Tableau, Power BI, or Looker.
+
+ • Strong analytical skills and the ability to interpret and present data-driven insights.
+
+ • Experience with Python or R for data analysis, automation, and statistical modeling (preferred).
+
+ • Understanding of data warehousing, ETL processes, and cloud-based data platforms (AWS, GCP, or Azure is a plus).
+
+ • Knowledge of A/B testing, predictive analytics, and machine learning is a bonus.
+
+ • Strong problem-solving skills, attention to detail, and ability to work with large datasets.
+
+ • Excellent communication skills to translate technical insights for non-technical stakeholders.
+
+
+
+Preferred Qualifications:
+
+ • Experience working with big data tools such as Spark, Hadoop, or Snowflake.
+
+ • Familiarity with APIs and data automation processes.
+
+ • Background in business intelligence, marketing analytics, financial analytics, or operations analytics.
+
+ • Strong project management and stakeholder engagement experience.
+
+
+
+Benefits:
+
+ • Competitive salary and performance-based bonuses.
+
+ • Flexible work environment (remote or hybrid options available).
+
+ • Professional development and training opportunities.
+
+ • Health benefits, retirement plans, and other perks based on company policies.
