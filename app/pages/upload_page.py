@@ -66,11 +66,26 @@ def render():
     # Load documents from persistent storage
     load_documents()
     
-    st.title("Upload Documents")
-    st.write("Upload resumes and job descriptions to begin the matching process.")
+    # Create a layout with columns for title and clear button
+    title_col, spacer, clear_btn_col = st.columns([5, 1, 2])
+    
+    # Title in left column
+    with title_col:
+        st.title("Upload Documents")
+    
+    # Clear button in right column
+    with clear_btn_col:
+        # Add some vertical space to align with title
+        st.write("")  # Empty space for alignment
+        if st.button("Clear All Documents", key="clear_all_btn", type="primary"):
+            clear_all_documents()
+            st.success("All documents have been cleared.")
+            st.rerun()
+    
+    st.write("Upload resumes and job descriptions in batch to begin the matching process.")
     
     # Set up tabs for different upload types
-    resume_tab, job_desc_tab, manage_tab = st.tabs(["Upload Resumes", "Upload Job Descriptions", "Manage Uploads"])
+    resume_tab, job_desc_tab, manage_tab = st.tabs(["*Upload Resumes*", "*Upload Job Descriptions*", "*Manage Uploads*"])
     
     # Resume Upload Tab
     with resume_tab:
@@ -110,7 +125,6 @@ def render():
     
     # Manage Uploads Tab
     with manage_tab:
-        st.subheader("Manage Uploaded Documents")
         
         # Place tables side by side
         table_col1, table_col2 = st.columns(2)
@@ -138,13 +152,6 @@ def render():
         if combined_docs:
             display_document_previews(combined_docs)
         
-        # Clear all documents
-        if st.button("Clear All Documents", key="clear_all_btn"):
-            clear_all_documents()
-            st.success("All documents have been cleared.")
-            st.rerun()
-
-
 def display_document_table(documents):
     """Display just the table part without previews"""
     # Create a DataFrame for display
@@ -161,8 +168,6 @@ def display_document_table(documents):
 
 def display_document_previews(documents):
     """Display side-by-side document preview columns with resume and job description types"""
-    # Use columns for side-by-side document previews
-    st.subheader("Document Previews")
     
     # Split documents by type
     resumes = [doc for doc in documents if doc['document_type'] == 'resume']
@@ -172,14 +177,14 @@ def display_document_previews(documents):
     col1, col2 = st.columns(2)
     
     with col1:
-        st.subheader("Resume")
+        st.subheader("Resume Previews")
         
         if resumes:
             # Create options dictionary for resumes only
             resume_options = {doc['filename']: i for i, doc in enumerate(resumes)}
             
             selected_resume = st.selectbox(
-                "Select resume", 
+                "", 
                 list(resume_options.keys()), 
                 key="select_resume"
             )
@@ -208,14 +213,14 @@ def display_document_previews(documents):
             )
     
     with col2:
-        st.subheader("Job Description")
+        st.subheader("Job Description Previews")
         
         if job_descriptions:
             # Create options dictionary for job descriptions only
             job_options = {doc['filename']: i for i, doc in enumerate(job_descriptions)}
             
             selected_job = st.selectbox(
-                "Select job description", 
+                "", 
                 list(job_options.keys()), 
                 key="select_job"
             )

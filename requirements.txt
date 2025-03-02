@@ -1,5 +1,4 @@
 streamlit
-watchdog
 streamlit_option_menu
 PyPDF2
 torch
@@ -20,3 +19,4 @@ google.generativeai
 torch
 python-dotenv
 watchdog
+streamlit-pdf-viewer
