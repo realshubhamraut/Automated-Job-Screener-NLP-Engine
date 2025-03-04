@@ -1,0 +1,21 @@
+2025-03-04 14:44:12 - root - INFO - Logging initialized. Log file: /Users/proxim/Desktop/Automated-First-Screener-and-AI-Job-Matching-NLP-WebEngine/logs/app_log_20250304_144412.log
+2025-03-04 14:44:27 - app.pages.upload_page - INFO - Loaded 9 resumes from storage
+2025-03-04 14:44:27 - app.pages.upload_page - INFO - Loaded 9 resumes from storage
+2025-03-04 14:44:27 - app.pages.upload_page - INFO - Loaded 2 job descriptions from storage
+2025-03-04 14:44:27 - app.pages.upload_page - INFO - Loaded 2 job descriptions from storage
+2025-03-04 14:44:44 - src.document_processor.embedder - INFO - Initializing embedder with model sentence-transformers/all-MiniLM-L6-v2 on cpu
+2025-03-04 14:44:45 - src.document_processor.embedder - INFO - Model loaded successfully: sentence-transformers/all-MiniLM-L6-v2
+2025-03-04 14:44:50 - src.document_processor.embedder - INFO - Initializing embedder with model sentence-transformers/all-MiniLM-L6-v2 on cpu
+2025-03-04 14:44:51 - src.document_processor.embedder - INFO - Model loaded successfully: sentence-transformers/all-MiniLM-L6-v2
+2025-03-04 14:44:55 - src.document_processor.embedder - INFO - Initializing embedder with model sentence-transformers/all-MiniLM-L6-v2 on cpu
+2025-03-04 14:44:56 - src.document_processor.embedder - INFO - Model loaded successfully: sentence-transformers/all-MiniLM-L6-v2
+2025-03-04 14:44:57 - src.document_processor.embedder - INFO - Initializing embedder with model sentence-transformers/all-MiniLM-L6-v2 on cpu
+2025-03-04 14:44:57 - src.document_processor.embedder - INFO - Model loaded successfully: sentence-transformers/all-MiniLM-L6-v2
+2025-03-04 14:44:58 - src.document_processor.embedder - INFO - Initializing embedder with model sentence-transformers/all-MiniLM-L6-v2 on cpu
+2025-03-04 14:44:59 - src.document_processor.embedder - INFO - Model loaded successfully: sentence-transformers/all-MiniLM-L6-v2
+2025-03-04 14:44:59 - src.document_processor.embedder - INFO - Initializing embedder with model sentence-transformers/all-MiniLM-L6-v2 on cpu
+2025-03-04 14:45:00 - src.document_processor.embedder - INFO - Model loaded successfully: sentence-transformers/all-MiniLM-L6-v2
+2025-03-04 14:45:02 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: mps
+2025-03-04 14:45:02 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-03-04 14:47:42 - app.pages.upload_page - INFO - Loaded 9 resumes from storage
+2025-03-04 14:47:42 - app.pages.upload_page - INFO - Loaded 2 job descriptions from storage

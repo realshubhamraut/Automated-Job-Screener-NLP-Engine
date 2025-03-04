@@ -282,6 +282,23 @@ def process_uploads(files, doc_type):
             # First letter of document type + 5 random chars
             doc_id = f"{doc_type[0]}{uuid.uuid4().hex[:5]}"
             
+            # Check for duplicate filenames and modify if needed
+            original_filename = file.name
+            filename_base, filename_ext = os.path.splitext(original_filename)
+            
+            # Check existing files to see if we need to add a counter
+            if doc_type == 'resume':
+                existing_files = [doc['filename'] for doc in st.session_state.resumes]
+            else:
+                existing_files = [doc['filename'] for doc in st.session_state.job_descriptions]
+            
+            # If the filename already exists, append (1), (2), etc.
+            counter = 1
+            new_filename = original_filename
+            while new_filename in existing_files:
+                new_filename = f"{filename_base}({counter}){filename_ext}"
+                counter += 1
+            
             # Save raw file to disk
             folder_type = "resumes" if doc_type == "resume" else "job_descriptions"
             raw_file_path = os.path.join(RAW_DIR, folder_type, f"{doc_id}{ext}")
@@ -298,12 +315,12 @@ def process_uploads(files, doc_type):
             # Create document dictionary with HH:MM:SS time format
             document = {
                 'id': doc_id,
-                'filename': file.name,
+                'filename': new_filename,
                 'upload_time': datetime.now().strftime('%H:%M:%S'),
                 'document_type': doc_type,
                 'original_text': text,
                 'processed': processed_doc,
-                'file_path': raw_file_path
+                'filepath': raw_file_path  # Changed from file_path to filepath for consistency
             }
             
             # Save processed document to JSON
@@ -323,8 +340,8 @@ def process_uploads(files, doc_type):
                 st.session_state.job_descriptions.append(document)
             
             # Log success
-            logger.info(f"Successfully processed {doc_type}: {file.name}")
-            st.success(f"Successfully processed {file.name}")
+            logger.info(f"Successfully processed {doc_type}: {new_filename}")
+            st.success(f"Successfully processed {new_filename}")
             
         except Exception as e:
             logger.error(f"Error processing {doc_type} {file.name}: {str(e)}")

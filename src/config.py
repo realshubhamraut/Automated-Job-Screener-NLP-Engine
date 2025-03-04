@@ -84,3 +84,15 @@ SYSTEM_PROMPTS = {
 ALLOWED_RESUME_TYPES = [".pdf", ".docx", ".txt"]
 ALLOWED_JOB_DESC_TYPES = [".pdf", ".docx", ".txt", ".md"]
 MAX_FILE_SIZE_MB = 10
+
+
+# Add this to your config.py if you prefer to define it there
+
+SKILLS_CATEGORIES = {
+    'Programming': ['python', 'java', 'javascript', 'c++', 'c#', 'ruby', 'php'],
+    'Frameworks': ['react', 'angular', 'vue', 'django', 'flask', 'spring', 'rails'],
+    'Database': ['sql', 'mysql', 'postgresql', 'mongodb', 'redis', 'oracle', 'dynamodb'],
+    'Cloud': ['aws', 'azure', 'gcp', 'cloud', 'serverless', 'docker', 'kubernetes'],
+    'Tools': ['git', 'jenkins', 'jira', 'confluence', 'slack', 'github', 'gitlab'],
+    'Other': []
+}

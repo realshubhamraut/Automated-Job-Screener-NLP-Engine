@@ -76,5 +76,6 @@ The system streamlines the recruitment process by automatically analyzing resume
 1. ##### **Clone the Repository:**
 
    ```bash
-   git clone https://github.com/realshubhamraut/Automated-First-Screener-and-AI-Job-Matching-NLP-WebEngine.git
+   git clone https://github.com/realshubhamraut/Automated-Job-Screener-NLP-Engine.git
    cd Automated-First-Screener-and-AI-Job-Matching-NLP-WebEngine
+   ```
