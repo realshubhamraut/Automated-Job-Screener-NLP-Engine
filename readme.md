@@ -26,7 +26,7 @@
 
 ---
 
-**Automated First Screener and AI Job Matching NLP WebEngine** is an intelligent system that leverages Natural Language Processing and vector search technology to match job candidates with relevant positions based on resume and job description analysis.
+**Automated Job Screener NLP Engine** is an intelligent system that leverages Natural Language Processing and vector search technology to match job candidates with relevant positions based on resume and job description analysis.
 
 The system streamlines the recruitment process by automatically analyzing resumes and job descriptions, identifying relevant skills and qualifications, and ranking candidates for specific positions. It uses semantic understanding and vector embeddings to go beyond simple keyword matching.
 
