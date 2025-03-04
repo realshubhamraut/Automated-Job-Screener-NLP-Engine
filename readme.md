@@ -1,4 +1,4 @@
-# Automated First Screener and AI Job Matching NLP WebEngine 🔍
+# Automated Job Screener NLP Engine 🔍
 
 <div style="display: flex; gap: 10px;">
   <a href="https://www.python.org/">
@@ -77,5 +77,5 @@ The system streamlines the recruitment process by automatically analyzing resume
 
    ```bash
    git clone https://github.com/realshubhamraut/Automated-Job-Screener-NLP-Engine.git
-   cd Automated-First-Screener-and-AI-Job-Matching-NLP-WebEngine
+   cd Automated-Job-Screener-NLP-Engine
    ```
