@@ -29,25 +29,39 @@ def render():
     # Import required modules inside the function to prevent breaking imports
     try:
         import google.generativeai as genai
-        from src.nlp.question_generator import QuestionGenerator
         IMPORTS_AVAILABLE = True
     except ImportError as e:
         logger.error(f"Import error: {str(e)}")
         st.error(f"Required package not available: {str(e)}")
-        st.info("Install missing packages by adding them to requirements.txt")
+        st.info("Install missing packages by running: pip install google-generativeai")
         IMPORTS_AVAILABLE = False
         
     if not IMPORTS_AVAILABLE:
         return
     
     # Configure Gemini API
+    gemini_api_key = os.getenv("GEMINI_API_KEY")
+    if not gemini_api_key:
+        st.error("Gemini API key not found. Please add it to your .env file as GEMINI_API_KEY.")
+        api_key = st.text_input("Enter your Google API key:", type="password", key="api_key_input")
+        if api_key:
+            gemini_api_key = api_key
+            os.environ["GEMINI_API_KEY"] = api_key
+    
     try:
-        genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
-        model = genai.GenerativeModel('gemini-pro')
+        genai.configure(api_key=gemini_api_key)
+        model = genai.GenerativeModel('gemini-2.0-flash-lite')
+        # Test the model with a simple query
+        _ = model.generate_content("Hello, are you working?")
         GEMINI_AVAILABLE = True
     except Exception as e:
         logger.error(f"Error configuring Gemini API: {str(e)}")
+        st.error(f"Error configuring Gemini API: {str(e)}")
         GEMINI_AVAILABLE = False
+    
+    if not GEMINI_AVAILABLE:
+        st.warning("⚠️ Gemini API is not available. Please check your API key and internet connection.")
+        return
     
     # Check for required session state data
     if not st.session_state.get('resumes'):
@@ -94,16 +108,17 @@ def render():
             help="Difficulty level of generated questions"
         )
         
-        if GEMINI_AVAILABLE:
-            generation_model = st.radio(
-                "Generation Model",
-                options=["Gemini Pro", "Rule-based"],
-                index=0,
-                help="Choose the model for generating questions"
-            )
-        else:
-            st.error("Gemini API not available. Using rule-based generation.")
-            generation_model = "Rule-based"
+        st.caption("Using Google Gemini Pro for question generation")
+        
+        # Add temperature control for more varied questions
+        temperature = st.slider(
+            "Creativity Level",
+            min_value=0.0,
+            max_value=1.0,
+            value=0.7,
+            step=0.1,
+            help="Higher values = more creative questions, lower values = more consistent questions"
+        )
     
     # Main content
     st.header("Generate Interview Questions")
@@ -192,26 +207,16 @@ def render():
                         job_text = selected_job['processed']['clean_text']
                         
                         # Generate questions
-                        if generation_model == "Gemini Pro" and GEMINI_AVAILABLE:
-                            questions = generate_questions_gemini(
-                                resume_text, 
-                                job_text, 
-                                num_questions, 
-                                question_types, 
-                                difficulty,
-                                genai,
-                                model
-                            )
-                        else:
-                            # Fallback to rule-based generation
-                            question_gen = QuestionGenerator()
-                            questions = question_gen.generate_questions(
-                                resume_text,
-                                job_text,
-                                num_questions=num_questions,
-                                question_types=question_types,
-                                difficulty=difficulty.lower()
-                            )
+                        questions = generate_questions_gemini(
+                            resume_text, 
+                            job_text, 
+                            num_questions, 
+                            question_types, 
+                            difficulty,
+                            genai,
+                            model,
+                            temperature
+                        )
                         
                         # Store generated questions in session state
                         st.session_state.interview_questions[match_id] = {
@@ -223,7 +228,8 @@ def render():
                                 'num_questions': num_questions,
                                 'question_types': question_types,
                                 'difficulty': difficulty,
-                                'model': generation_model
+                                'model': "Gemini Pro",
+                                'temperature': temperature
                             }
                         }
                         
@@ -295,26 +301,16 @@ def render():
                             job_text = backup_job['processed']['clean_text']
                             
                             # Generate questions
-                            if generation_model == "Gemini Pro" and GEMINI_AVAILABLE:
-                                questions = generate_questions_gemini(
-                                    resume_text, 
-                                    job_text, 
-                                    num_questions, 
-                                    question_types, 
-                                    difficulty,
-                                    genai,
-                                    model
-                                )
-                            else:
-                                # Fallback to rule-based generation
-                                question_gen = QuestionGenerator()
-                                questions = question_gen.generate_questions(
-                                    resume_text,
-                                    job_text,
-                                    num_questions=num_questions,
-                                    question_types=question_types,
-                                    difficulty=difficulty.lower()
-                                )
+                            questions = generate_questions_gemini(
+                                resume_text, 
+                                job_text, 
+                                num_questions, 
+                                question_types, 
+                                difficulty,
+                                genai,
+                                model,
+                                temperature
+                            )
                             
                             # Store generated questions in session state
                             st.session_state.interview_questions[match_id] = {
@@ -326,7 +322,8 @@ def render():
                                     'num_questions': num_questions,
                                     'question_types': question_types,
                                     'difficulty': difficulty,
-                                    'model': generation_model
+                                    'model': "Gemini Pro",
+                                    'temperature': temperature
                                 }
                             }
                             
@@ -351,7 +348,8 @@ def generate_questions_gemini(
     question_types: List[str], 
     difficulty: str,
     genai,
-    model
+    model,
+    temperature: float = 0.7
 ) -> List[Dict[str, str]]:
     """
     Generate interview questions using Google's Gemini API
@@ -364,52 +362,82 @@ def generate_questions_gemini(
         difficulty: Difficulty level of questions
         genai: Google generative AI module
         model: Gemini model instance
+        temperature: Creativity level (higher = more varied questions)
         
     Returns:
         List of question dictionaries
     """
     try:
-        # Prepare the prompt
+        # Prepare the prompt with clearer instructions
         prompt = f"""
-        You are a professional hiring manager preparing for an interview. Create {num_questions} unique interview questions based on the following:
-        
-        Resume:
-        {resume_text[:3000]}  # Limiting to 3000 chars to avoid exceeding token limits
-        
-        Job Description:
-        {job_text[:3000]}  # Limiting to 3000 chars to avoid exceeding token limits
-        
-        Generate {num_questions} {difficulty.lower()} level questions of the following types: {', '.join(question_types)}.
-        
-        For each question:
-        1. Consider the specific skills and experience in the resume that match the job description
-        2. Focus on assessing both technical capability and problem-solving abilities
-        3. Include questions that verify the candidate's claimed experience
-        
-        Format the response as a JSON array with each question having these fields:
-        - "question": The interview question
-        - "type": The question type (one of the types specified)
-        - "difficulty": The difficulty level
-        - "purpose": A brief explanation of what this question aims to assess
-        - "good_answer_criteria": What would make a good answer to this question
+        As a professional hiring manager, create {num_questions} unique, high-quality interview questions based on the candidate's resume and job description provided below.
 
-        Only respond with valid JSON.
+        RESUME:
+        {resume_text[:2000]}  # Limiting to 2000 chars to avoid exceeding token limits
+
+        JOB DESCRIPTION:
+        {job_text[:2000]}  # Limiting to 2000 chars to avoid exceeding token limits
+
+        REQUIREMENTS:
+        - Generate exactly {num_questions} {difficulty.lower()} level questions
+        - Focus on these question types: {', '.join(question_types)}
+        - Each question must be unique and specific to this candidate/job
+        - Target the specific skills and experience from the resume that match job requirements
+        - Include questions that verify the candidate's claimed experience
+
+        QUESTION STRUCTURE:
+        Return your response as a JSON array with objects having these exact fields:
+        - "question": Clear, concise interview question
+        - "type": One of the specified types ({', '.join(question_types)})
+        - "difficulty": "{difficulty}"
+        - "purpose": Brief explanation of what this question aims to assess
+        - "good_answer_criteria": Key points a good candidate response would include
+
+        DO NOT include any explanation or introduction text. ONLY return properly formatted JSON.
         """
         
-        # Generate response from Gemini
-        response = model.generate_content(prompt)
+        # Generate response from Gemini with specific generation configuration
+        generation_config = {
+            "temperature": temperature,
+            "top_p": 0.95,
+            "top_k": 40,
+            "max_output_tokens": 2048,
+        }
+        
+        response = model.generate_content(
+            prompt,
+            generation_config=generation_config
+        )
         
         # Extract JSON from response
-        json_text = response.text
+        json_text = response.text.strip()
         
-        # Sometimes the response might contain markdown formatting, so let's extract just the JSON part
+        # Clean up the JSON text - handle different potential response formats
         if "```json" in json_text:
             json_text = json_text.split("```json")[1].split("```")[0].strip()
         elif "```" in json_text:
+            # Extract text between first set of triple backticks
             json_text = json_text.split("```")[1].strip()
         
-        # Parse JSON into Python objects
-        questions = json.loads(json_text)
+        # Try to fix any trailing commas in arrays that might cause JSON parsing errors
+        json_text = json_text.replace(",\n]", "\n]").replace(",]", "]")
+        
+        try:
+            # Parse JSON into Python objects
+            questions = json.loads(json_text)
+        except json.JSONDecodeError as e:
+            logger.error(f"JSON decode error: {str(e)} - Response was: {json_text[:500]}...")
+            # Attempt to fix common JSON format issues
+            if json_text.startswith("[") and "question" in json_text:
+                # Try to manually parse the response if it looks like JSON array but has minor issues
+                try:
+                    # Use a more permissive approach - extract question objects manually
+                    questions = extract_questions_from_malformed_json(json_text, num_questions, question_types, difficulty)
+                except Exception as e2:
+                    logger.error(f"Failed to extract questions manually: {str(e2)}")
+                    raise ValueError(f"Could not parse model response as JSON: {str(e)}")
+            else:
+                raise ValueError(f"Could not parse model response as JSON: {str(e)}")
         
         # Ensure we have the right format
         if isinstance(questions, list) and len(questions) > 0:
@@ -417,7 +445,7 @@ def generate_questions_gemini(
             for q in questions:
                 if "question" not in q:
                     q["question"] = "Please describe your experience with this role."
-                if "type" not in q:
+                if "type" not in q or q["type"] not in question_types:
                     q["type"] = question_types[0] if question_types else "Technical"
                 if "difficulty" not in q:
                     q["difficulty"] = difficulty
@@ -429,67 +457,121 @@ def generate_questions_gemini(
             return questions[:num_questions]  # Ensure we return only the requested number
         else:
             logger.error(f"Invalid response format from Gemini API: {json_text}")
-            raise ValueError("Invalid response format from API")
+            raise ValueError("Invalid response format from API - expected an array of questions but got something else")
             
     except Exception as e:
         logger.error(f"Error with Gemini API: {str(e)}")
-        # Return a fallback set of generic questions
-        return generate_fallback_questions(num_questions, question_types, difficulty)
+        # Generate emergency fallback questions
+        return generate_emergency_fallback_questions(num_questions, question_types, difficulty)
 
-def generate_fallback_questions(num_questions: int, question_types: List[str], difficulty: str) -> List[Dict[str, str]]:
-    """Generate fallback questions when API fails"""
+def extract_questions_from_malformed_json(text: str, num_questions: int, question_types: List[str], difficulty: str) -> List[Dict[str, str]]:
+    """Extract questions from malformed JSON by using regex patterns"""
+    import re
     
-    fallback_questions = [
+    questions = []
+    
+    # Look for question patterns in the text
+    question_patterns = re.finditer(r'"question"\s*:\s*"([^"]+)"', text)
+    
+    for match in question_patterns:
+        if len(questions) >= num_questions:
+            break
+            
+        question_text = match.group(1)
+        
+        # Create a question object
+        question = {
+            "question": question_text,
+            "type": question_types[0] if question_types else "Technical",
+            "difficulty": difficulty,
+            "purpose": "Evaluate candidate qualifications and experience",
+            "good_answer_criteria": "Specific examples from experience that demonstrate skills and knowledge"
+        }
+        
+        # Try to find the type for this question
+        type_match = re.search(r'"type"\s*:\s*"([^"]+)"', text[match.end():match.end()+200])
+        if type_match and type_match.group(1) in question_types:
+            question["type"] = type_match.group(1)
+            
+        # Try to find the purpose
+        purpose_match = re.search(r'"purpose"\s*:\s*"([^"]+)"', text[match.end():match.end()+300])
+        if purpose_match:
+            question["purpose"] = purpose_match.group(1)
+            
+        # Try to find good answer criteria
+        criteria_match = re.search(r'"good_answer_criteria"\s*:\s*"([^"]+)"', text[match.end():match.end()+500])
+        if criteria_match:
+            question["good_answer_criteria"] = criteria_match.group(1)
+            
+        questions.append(question)
+    
+    # If we couldn't extract any questions, raise an error
+    if not questions:
+        raise ValueError("Could not extract questions from model response")
+        
+    return questions
+
+def generate_emergency_fallback_questions(num_questions: int, question_types: List[str], difficulty: str) -> List[Dict[str, str]]:
+    """Generate emergency fallback questions when all else fails"""
+    
+    emergency_questions = [
         {
-            "question": "Can you walk me through your relevant experience for this role?",
+            "question": "Can you walk me through your professional experience and how it relates to this role?",
             "type": "Experience",
             "difficulty": difficulty,
-            "purpose": "To understand the candidate's background",
-            "good_answer_criteria": "Clear explanation of relevant experience with specific examples"
+            "purpose": "To understand the candidate's background and relevance",
+            "good_answer_criteria": "Clear overview of career highlighting relevant experience"
         },
         {
-            "question": "What technical skills do you bring that make you a good fit for this position?",
+            "question": "What technical skills do you believe are most important for success in this position?",
             "type": "Technical",
             "difficulty": difficulty,
-            "purpose": "To assess technical qualifications",
-            "good_answer_criteria": "Specific technical skills that match job requirements"
+            "purpose": "To assess technical knowledge and priorities",
+            "good_answer_criteria": "Identifies key technical skills that match job requirements"
         },
         {
-            "question": "Describe a challenging problem you solved in a previous role.",
+            "question": "Describe a challenging problem you solved in a previous role and your approach.",
             "type": "Problem Solving",
             "difficulty": difficulty,
-            "purpose": "To evaluate problem-solving abilities",
-            "good_answer_criteria": "Structured approach to problem-solving with measurable results"
+            "purpose": "To evaluate problem-solving methodology",
+            "good_answer_criteria": "Structured approach with clear problem definition, solution process, and results"
         },
         {
-            "question": "How do you stay updated with the latest developments in your field?",
-            "type": "Professional Development",
+            "question": "How would you apply your experience to the challenges faced in this position?",
+            "type": "Role-specific",
             "difficulty": difficulty,
-            "purpose": "To assess learning attitude",
-            "good_answer_criteria": "Demonstrates continuous learning and professional development"
+            "purpose": "To assess role understanding and fit",
+            "good_answer_criteria": "Shows understanding of the role's challenges and how their skills address them"
         },
         {
-            "question": "What interests you about this position?",
+            "question": "What aspects of this role interest you the most and why?",
             "type": "Motivation",
             "difficulty": difficulty,
-            "purpose": "To understand candidate's interest",
-            "good_answer_criteria": "Shows genuine interest and knowledge about the role"
+            "purpose": "To understand candidate's motivation",
+            "good_answer_criteria": "Shows genuine interest and knowledge about the specific role"
         }
     ]
     
     # Filter by question types if provided
     if question_types:
-        filtered_questions = [q for q in fallback_questions if q["type"] in question_types]
+        filtered_questions = [q for q in emergency_questions if q["type"] in question_types]
         # If filtering removed all questions, return original set
         if not filtered_questions:
-            filtered_questions = fallback_questions
+            filtered_questions = emergency_questions
     else:
-        filtered_questions = fallback_questions
+        filtered_questions = emergency_questions
     
     # Return requested number of questions, repeating if necessary
     result = []
     for i in range(num_questions):
-        result.append(filtered_questions[i % len(filtered_questions)])
+        # Create a copy of the question to avoid duplicates with the same reference
+        new_question = dict(filtered_questions[i % len(filtered_questions)])
+        
+        # If we're repeating questions, add a suffix to make them slightly different
+        if i >= len(filtered_questions):
+            new_question["question"] += f" Specifically regarding {'your technical skills' if i % 2 == 0 else 'your recent projects'}."
+            
+        result.append(new_question)
     
     return result
 

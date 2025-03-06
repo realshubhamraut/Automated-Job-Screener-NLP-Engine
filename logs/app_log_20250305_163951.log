@@ -1,0 +1,59 @@
+2025-03-05 16:39:51 - root - INFO - Logging initialized. Log file: /Users/proxim/Desktop/Automated-First-Screener-and-AI-Job-Matching-NLP-WebEngine/logs/app_log_20250305_163951.log
+2025-03-05 16:39:56 - app.pages.upload_page - INFO - Loaded 9 resumes from storage
+2025-03-05 16:39:56 - app.pages.upload_page - INFO - Loaded 2 job descriptions from storage
+2025-03-05 16:40:00 - src.document_processor.embedder - INFO - Initializing embedder with model sentence-transformers/all-MiniLM-L6-v2 on cpu
+2025-03-05 16:40:02 - src.document_processor.embedder - INFO - Model loaded successfully: sentence-transformers/all-MiniLM-L6-v2
+2025-03-05 16:40:07 - src.document_processor.embedder - INFO - Initializing embedder with model sentence-transformers/all-MiniLM-L6-v2 on cpu
+2025-03-05 16:40:08 - src.document_processor.embedder - INFO - Model loaded successfully: sentence-transformers/all-MiniLM-L6-v2
+2025-03-05 16:40:11 - src.document_processor.embedder - INFO - Initializing embedder with model sentence-transformers/all-MiniLM-L6-v2 on cpu
+2025-03-05 16:40:12 - src.document_processor.embedder - INFO - Model loaded successfully: sentence-transformers/all-MiniLM-L6-v2
+2025-03-05 16:40:14 - src.document_processor.embedder - INFO - Initializing embedder with model sentence-transformers/all-MiniLM-L6-v2 on cpu
+2025-03-05 16:40:15 - src.document_processor.embedder - INFO - Model loaded successfully: sentence-transformers/all-MiniLM-L6-v2
+2025-03-05 16:40:15 - src.document_processor.embedder - INFO - Initializing embedder with model sentence-transformers/all-MiniLM-L6-v2 on cpu
+2025-03-05 16:40:16 - src.document_processor.embedder - INFO - Model loaded successfully: sentence-transformers/all-MiniLM-L6-v2
+2025-03-05 16:40:17 - src.document_processor.embedder - INFO - Initializing embedder with model sentence-transformers/all-MiniLM-L6-v2 on cpu
+2025-03-05 16:40:17 - src.document_processor.embedder - INFO - Model loaded successfully: sentence-transformers/all-MiniLM-L6-v2
+2025-03-05 16:40:23 - app.pages.analysis_page - INFO - Loaded job description: 92069209.pdf
+2025-03-05 16:40:23 - app.pages.analysis_page - INFO - Loaded job description: jobdescription.txt
+2025-03-05 16:47:12 - src.document_processor.embedder - INFO - Initializing embedder with model sentence-transformers/all-MiniLM-L6-v2 on cpu
+2025-03-05 16:47:13 - src.document_processor.embedder - INFO - Model loaded successfully: sentence-transformers/all-MiniLM-L6-v2
+2025-03-05 16:57:38 - src.document_processor.embedder - INFO - Initializing embedder with model sentence-transformers/all-MiniLM-L6-v2 on cpu
+2025-03-05 16:57:39 - src.document_processor.embedder - INFO - Model loaded successfully: sentence-transformers/all-MiniLM-L6-v2
+2025-03-05 16:57:46 - app.pages.upload_page - INFO - Loaded 9 resumes from storage
+2025-03-05 16:57:46 - app.pages.upload_page - INFO - Loaded 2 job descriptions from storage
+2025-03-05 16:57:48 - src.document_processor.embedder - INFO - Initializing embedder with model sentence-transformers/all-MiniLM-L6-v2 on cpu
+2025-03-05 16:57:50 - src.document_processor.embedder - INFO - Model loaded successfully: sentence-transformers/all-MiniLM-L6-v2
+2025-03-05 16:57:53 - src.document_processor.embedder - INFO - Initializing embedder with model sentence-transformers/all-MiniLM-L6-v2 on cpu
+2025-03-05 16:57:54 - src.document_processor.embedder - INFO - Model loaded successfully: sentence-transformers/all-MiniLM-L6-v2
+2025-03-05 16:57:57 - src.document_processor.embedder - INFO - Initializing embedder with model sentence-transformers/all-MiniLM-L6-v2 on cpu
+2025-03-05 16:57:58 - src.document_processor.embedder - INFO - Model loaded successfully: sentence-transformers/all-MiniLM-L6-v2
+2025-03-05 16:58:00 - src.document_processor.embedder - INFO - Initializing embedder with model sentence-transformers/all-MiniLM-L6-v2 on cpu
+2025-03-05 16:58:01 - src.document_processor.embedder - INFO - Model loaded successfully: sentence-transformers/all-MiniLM-L6-v2
+2025-03-05 16:58:03 - src.document_processor.embedder - INFO - Initializing embedder with model sentence-transformers/all-MiniLM-L6-v2 on cpu
+2025-03-05 16:58:04 - src.document_processor.embedder - INFO - Model loaded successfully: sentence-transformers/all-MiniLM-L6-v2
+2025-03-05 16:58:05 - src.document_processor.embedder - INFO - Initializing embedder with model sentence-transformers/all-MiniLM-L6-v2 on cpu
+2025-03-05 16:58:05 - src.document_processor.embedder - INFO - Model loaded successfully: sentence-transformers/all-MiniLM-L6-v2
+2025-03-05 16:58:09 - src.document_processor.embedder - INFO - Initializing embedder with model sentence-transformers/all-MiniLM-L6-v2 on cpu
+2025-03-05 16:58:10 - src.document_processor.embedder - INFO - Model loaded successfully: sentence-transformers/all-MiniLM-L6-v2
+2025-03-05 16:58:15 - app.pages.analysis_page - INFO - Loaded job description: 92069209.pdf
+2025-03-05 16:58:15 - app.pages.analysis_page - INFO - Loaded job description: jobdescription.txt
+2025-03-05 16:58:15 - app.pages.analysis_page - ERROR - Error extracting resume info: st.session_state has no attribute "analysis_cache". Did you forget to initialize it? More info: https://docs.streamlit.io/develop/concepts/architecture/session-state#initialization
+2025-03-05 16:58:17 - app.pages.analysis_page - ERROR - Error extracting resume info: st.session_state has no attribute "analysis_cache". Did you forget to initialize it? More info: https://docs.streamlit.io/develop/concepts/architecture/session-state#initialization
+2025-03-05 17:01:20 - app.pages.upload_page - INFO - Loaded 9 resumes from storage
+2025-03-05 17:01:20 - app.pages.upload_page - INFO - Loaded 2 job descriptions from storage
+2025-03-05 17:01:24 - src.document_processor.embedder - INFO - Initializing embedder with model sentence-transformers/all-MiniLM-L6-v2 on cpu
+2025-03-05 17:01:25 - src.document_processor.embedder - INFO - Model loaded successfully: sentence-transformers/all-MiniLM-L6-v2
+2025-03-05 17:01:28 - src.document_processor.embedder - INFO - Initializing embedder with model sentence-transformers/all-MiniLM-L6-v2 on cpu
+2025-03-05 17:01:29 - src.document_processor.embedder - INFO - Model loaded successfully: sentence-transformers/all-MiniLM-L6-v2
+2025-03-05 17:01:33 - src.document_processor.embedder - INFO - Initializing embedder with model sentence-transformers/all-MiniLM-L6-v2 on cpu
+2025-03-05 17:01:34 - src.document_processor.embedder - INFO - Initializing embedder with model sentence-transformers/all-MiniLM-L6-v2 on cpu
+2025-03-05 17:01:34 - src.document_processor.embedder - INFO - Model loaded successfully: sentence-transformers/all-MiniLM-L6-v2
+2025-03-05 17:01:35 - src.document_processor.embedder - INFO - Model loaded successfully: sentence-transformers/all-MiniLM-L6-v2
+2025-03-05 17:01:38 - src.document_processor.embedder - INFO - Initializing embedder with model sentence-transformers/all-MiniLM-L6-v2 on cpu
+2025-03-05 17:01:39 - src.document_processor.embedder - INFO - Model loaded successfully: sentence-transformers/all-MiniLM-L6-v2
+2025-03-05 17:01:41 - src.document_processor.embedder - INFO - Initializing embedder with model sentence-transformers/all-MiniLM-L6-v2 on cpu
+2025-03-05 17:01:42 - src.document_processor.embedder - INFO - Model loaded successfully: sentence-transformers/all-MiniLM-L6-v2
+2025-03-05 17:01:44 - app.pages.analysis_page - INFO - Loaded job description: 92069209.pdf
+2025-03-05 17:01:44 - app.pages.analysis_page - INFO - Loaded job description: jobdescription.txt
+2025-03-05 17:14:26 - app.pages.interview_page - ERROR - Error with Gemini API: 404 models/gemini-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2025-03-05 17:18:15 - app.pages.interview_page - ERROR - Import error: cannot import name 'QuestionGenerator' from 'src.nlp.question_generator' (/Users/proxim/Desktop/Automated-First-Screener-and-AI-Job-Matching-NLP-WebEngine/src/nlp/question_generator.py)

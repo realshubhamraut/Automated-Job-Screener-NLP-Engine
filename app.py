@@ -183,15 +183,15 @@ div.stButton > button[kind="primary"] .icon {
 <div class="caption-container">
   <div class="title-caption">Intelligent resume parsing and job matching powered by NLP</div>
 </div>
+<div class="caption-container">
+<div class="title-caption">BETA VERSION - Still under development, but you can explore some features</div>
+</div>
 """
 
-# Initialize session state variables
 init_session_state()
 
-# Display the gradient title
 st.markdown(gradient_title_html, unsafe_allow_html=True)
 
-# Render sidebar
 render_sidebar()
 
 # Use streamlit_option_menu which already supports icons

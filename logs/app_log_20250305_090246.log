@@ -1,0 +1,15 @@
+2025-03-05 09:02:46 - root - INFO - Logging initialized. Log file: /Users/proxim/Desktop/Automated-First-Screener-and-AI-Job-Matching-NLP-WebEngine/logs/app_log_20250305_090246.log
+2025-03-05 09:02:50 - app.pages.upload_page - INFO - Loaded 9 resumes from storage
+2025-03-05 09:02:50 - app.pages.upload_page - INFO - Loaded 2 job descriptions from storage
+2025-03-05 09:03:02 - src.document_processor.embedder - INFO - Initializing embedder with model sentence-transformers/all-MiniLM-L6-v2 on cpu
+2025-03-05 09:03:03 - src.document_processor.embedder - INFO - Model loaded successfully: sentence-transformers/all-MiniLM-L6-v2
+2025-03-05 09:03:08 - src.document_processor.embedder - INFO - Initializing embedder with model sentence-transformers/all-MiniLM-L6-v2 on cpu
+2025-03-05 09:03:09 - src.document_processor.embedder - INFO - Model loaded successfully: sentence-transformers/all-MiniLM-L6-v2
+2025-03-05 09:03:12 - src.document_processor.embedder - INFO - Initializing embedder with model sentence-transformers/all-MiniLM-L6-v2 on cpu
+2025-03-05 09:03:13 - src.document_processor.embedder - INFO - Initializing embedder with model sentence-transformers/all-MiniLM-L6-v2 on cpu
+2025-03-05 09:03:13 - src.document_processor.embedder - INFO - Model loaded successfully: sentence-transformers/all-MiniLM-L6-v2
+2025-03-05 09:03:15 - src.document_processor.embedder - INFO - Model loaded successfully: sentence-transformers/all-MiniLM-L6-v2
+2025-03-05 09:03:16 - src.document_processor.embedder - INFO - Initializing embedder with model sentence-transformers/all-MiniLM-L6-v2 on cpu
+2025-03-05 09:03:17 - src.document_processor.embedder - INFO - Model loaded successfully: sentence-transformers/all-MiniLM-L6-v2
+2025-03-05 09:03:59 - app.pages.analysis_page - ERROR - Gemini API error: 429 Resource has been exhausted (e.g. check quota).
+2025-03-05 09:04:01 - app.pages.analysis_page - ERROR - Gemini API error: 429 Resource has been exhausted (e.g. check quota).
