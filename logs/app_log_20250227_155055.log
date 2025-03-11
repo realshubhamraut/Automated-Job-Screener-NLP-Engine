@@ -1,4 +1,0 @@
-2025-02-27 15:50:55 - root - INFO - Logging initialized. Log file: /Users/proxim/Desktop/Automated-First-Screener-and-AI-Job-Matching-NLP-WebEngine/logs/app_log_20250227_155055.log
-2025-02-27 15:50:59 - faiss.loader - INFO - Loading faiss.
-2025-02-27 15:50:59 - faiss.loader - INFO - Successfully loaded faiss.
-2025-02-27 15:50:59 - faiss - INFO - Failed to load GPU Faiss: name 'GpuIndexIVFFlat' is not defined. Will not load constructor refs for GPU indexes.

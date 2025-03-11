@@ -1,5 +1,0 @@
-2025-02-27 16:43:21 - root - INFO - Logging initialized. Log file: /Users/proxim/Desktop/Automated-First-Screener-and-AI-Job-Matching-NLP-WebEngine/logs/app_log_20250227_164321.log
-2025-02-27 16:43:24 - faiss.loader - INFO - Loading faiss.
-2025-02-27 16:43:24 - faiss.loader - INFO - Successfully loaded faiss.
-2025-02-27 16:43:24 - faiss - INFO - Failed to load GPU Faiss: name 'GpuIndexIVFFlat' is not defined. Will not load constructor refs for GPU indexes.
-2025-02-27 16:43:51 - app.pages.upload_page - ERROR - Error processing resume resume.pdf: expected str, bytes or os.PathLike object, not UploadedFile
