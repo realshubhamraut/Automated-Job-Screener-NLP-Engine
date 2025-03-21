@@ -25,3 +25,6 @@ InstructorEmbedding==1.0.1
 spacy>=3.0.0
 nltk>=3.6.0
 sentence-transformers>=2.2.0
+streamlit_webrtc
+pydub
+SpeechRecognition

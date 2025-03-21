@@ -11,6 +11,9 @@ LOG_DIR.mkdir(exist_ok=True)
 # Default log file
 DEFAULT_LOG_FILE = LOG_DIR / "app.log"
 
+APP_NAME = "AI Job Matching & Screening Assistant"
+
+
 # Document directories
 RESUME_DIR = DATA_DIR / "resumes"
 JOB_DESC_DIR = DATA_DIR / "job_descriptions"
@@ -64,3 +67,8 @@ API_KEYS = {
 
 # Logging level
 LOG_LEVEL = logging.INFO
+
+# File upload settings
+ALLOWED_RESUME_TYPES = ["pdf", "docx", "doc", "txt", "rtf"]
+ALLOWED_JOB_DESC_TYPES = ["pdf", "docx", "doc", "txt", "rtf"]
+MAX_FILE_SIZE_MB = 10
