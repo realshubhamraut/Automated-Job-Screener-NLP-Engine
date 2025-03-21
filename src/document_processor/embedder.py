@@ -1,16 +1,17 @@
-import torch
+ import torch
 import numpy as np
 from typing import List, Dict, Any, Union, Optional
 from transformers import AutoTokenizer, AutoModel
+from sentence_transformers import SentenceTransformer
 import os
 
-from src.config import EMBEDDING_MODEL
+from src.config import EMBEDDING_MODEL, USE_FINETUNED_MODELS, FINETUNED_EMBEDDING_MODEL
 from src.utils.logger import get_logger
 
 logger = get_logger(__name__)
 
 class TextEmbedder:
-    """Generate embeddings for text using PyTorch models directly."""
+    """Generate embeddings for text using PyTorch models directly or fine-tuned SentenceTransformers."""
     
     def __init__(self, model_name: str = EMBEDDING_MODEL, device: Optional[str] = None):
         """
@@ -28,17 +29,45 @@ class TextEmbedder:
         else:
             self.device = device
         
-        logger.info(f"Initializing embedder with model {model_name} on {self.device}")
+        # Flag to indicate if we're using SentenceTransformer
+        self.use_sentence_transformer = False
         
+        # Check if we should use fine-tuned model
+        if USE_FINETUNED_MODELS and os.path.exists(FINETUNED_EMBEDDING_MODEL):
+            try:
+                logger.info(f"Initializing embedder with fine-tuned model from {FINETUNED_EMBEDDING_MODEL} on {self.device}")
+                self.sentence_transformer = SentenceTransformer(FINETUNED_EMBEDDING_MODEL)
+                self.sentence_transformer.to(self.device)
+                self.use_sentence_transformer = True
+                
+                # Get dimension from SentenceTransformer
+                self._dimension = self.sentence_transformer.get_sentence_embedding_dimension()
+                
+                logger.info(f"Fine-tuned model loaded successfully with dimension {self._dimension}")
+            except Exception as e:
+                logger.error(f"Error loading fine-tuned model: {str(e)}. Falling back to pre-trained model.")
+                self._load_pretrained_model(model_name)
+        else:
+            logger.info(f"Initializing embedder with pre-trained model {model_name} on {self.device}")
+            self._load_pretrained_model(model_name)
+    
+    def _load_pretrained_model(self, model_name):
+        """Load the pre-trained model"""
         try:
-            # Load tokenizer and model directly from Hugging Face
-            self.tokenizer = AutoTokenizer.from_pretrained(model_name)
-            self.model = AutoModel.from_pretrained(model_name).to(self.device)
-            logger.info(f"Model loaded successfully: {model_name}")
-            
-            # Add the dimension attribute - this was missing in the original implementation
-            self._dimension = self.model.config.hidden_size
-            
+            # First try to load as SentenceTransformer (may provide better results)
+            try:
+                self.sentence_transformer = SentenceTransformer(model_name)
+                self.sentence_transformer.to(self.device)
+                self.use_sentence_transformer = True
+                self._dimension = self.sentence_transformer.get_sentence_embedding_dimension()
+                logger.info(f"Loaded model as SentenceTransformer: {model_name}")
+            except Exception as e:
+                # Fall back to HuggingFace transformers
+                logger.info(f"Could not load as SentenceTransformer: {str(e)}. Loading as HuggingFace model.")
+                self.tokenizer = AutoTokenizer.from_pretrained(model_name)
+                self.model = AutoModel.from_pretrained(model_name).to(self.device)
+                self._dimension = self.model.config.hidden_size
+                logger.info(f"Loaded model as HuggingFace transformers: {model_name}")
         except Exception as e:
             logger.error(f"Error loading model: {str(e)}")
             raise
@@ -72,7 +101,6 @@ class TextEmbedder:
         # Return mean pooled embeddings
         return sum_embeddings / sum_mask
     
-    
     def embed_text(self, text: str) -> np.ndarray:
         """
         Generate embedding for a single text
@@ -86,34 +114,39 @@ class TextEmbedder:
         if not text or not isinstance(text, str):
             logger.warning("Invalid text for embedding")
             # Return zero vector of appropriate dimension
-            return np.zeros(self.model.config.hidden_size)
+            return np.zeros(self._dimension)
         
         try:
-            # Tokenize and prepare input
-            encoded_input = self.tokenizer(
-                text, 
-                padding=True, 
-                truncation=True, 
-                max_length=512, 
-                return_tensors='pt'
-            ).to(self.device)
-            
-            # Generate embeddings
-            with torch.no_grad():
-                model_output = self.model(**encoded_input)
-            
-            # Perform pooling and get embeddings
-            embeddings = self._mean_pooling(model_output, encoded_input['attention_mask'])
-            
-            # Normalize embeddings
-            embeddings = torch.nn.functional.normalize(embeddings, p=2, dim=1)
-            
-            # Convert to numpy and return the first (only) embedding
-            return embeddings[0].cpu().numpy()
+            if self.use_sentence_transformer:
+                # Use SentenceTransformer for embedding
+                embedding = self.sentence_transformer.encode(text, convert_to_tensor=True)
+                return embedding.cpu().numpy()
+            else:
+                # Use HuggingFace model directly
+                encoded_input = self.tokenizer(
+                    text, 
+                    padding=True, 
+                    truncation=True, 
+                    max_length=512, 
+                    return_tensors='pt'
+                ).to(self.device)
+                
+                # Generate embeddings
+                with torch.no_grad():
+                    model_output = self.model(**encoded_input)
+                
+                # Perform pooling and get embeddings
+                embeddings = self._mean_pooling(model_output, encoded_input['attention_mask'])
+                
+                # Normalize embeddings
+                embeddings = torch.nn.functional.normalize(embeddings, p=2, dim=1)
+                
+                # Convert to numpy and return the first (only) embedding
+                return embeddings[0].cpu().numpy()
         
         except Exception as e:
             logger.error(f"Error generating embedding: {str(e)}")
-            return np.zeros(self.model.config.hidden_size)
+            return np.zeros(self._dimension)
     
     def embed_texts(self, texts: List[str]) -> np.ndarray:
         """
@@ -134,44 +167,49 @@ class TextEmbedder:
         
         if not valid_texts:
             logger.warning("No valid texts for embedding")
-            return np.zeros((0, self.model.config.hidden_size))
+            return np.zeros((0, self._dimension))
         
         try:
-            # Process in smaller batches to avoid OOM issues
-            batch_size = 32
-            all_embeddings = []
-            
-            for i in range(0, len(valid_texts), batch_size):
-                batch_texts = valid_texts[i:i+batch_size]
+            if self.use_sentence_transformer:
+                # Process with SentenceTransformer
+                embeddings = self.sentence_transformer.encode(valid_texts, convert_to_tensor=True)
+                return embeddings.cpu().numpy()
+            else:
+                # Process in smaller batches to avoid OOM issues
+                batch_size = 32
+                all_embeddings = []
                 
-                # Tokenize and prepare input
-                encoded_input = self.tokenizer(
-                    batch_texts, 
-                    padding=True, 
-                    truncation=True, 
-                    max_length=512, 
-                    return_tensors='pt'
-                ).to(self.device)
+                for i in range(0, len(valid_texts), batch_size):
+                    batch_texts = valid_texts[i:i+batch_size]
+                    
+                    # Tokenize and prepare input
+                    encoded_input = self.tokenizer(
+                        batch_texts, 
+                        padding=True, 
+                        truncation=True, 
+                        max_length=512, 
+                        return_tensors='pt'
+                    ).to(self.device)
+                    
+                    # Generate embeddings
+                    with torch.no_grad():
+                        model_output = self.model(**encoded_input)
+                    
+                    # Perform pooling and get embeddings
+                    embeddings = self._mean_pooling(model_output, encoded_input['attention_mask'])
+                    
+                    # Normalize embeddings
+                    embeddings = torch.nn.functional.normalize(embeddings, p=2, dim=1)
+                    
+                    # Add to list
+                    all_embeddings.append(embeddings.cpu().numpy())
                 
-                # Generate embeddings
-                with torch.no_grad():
-                    model_output = self.model(**encoded_input)
-                
-                # Perform pooling and get embeddings
-                embeddings = self._mean_pooling(model_output, encoded_input['attention_mask'])
-                
-                # Normalize embeddings
-                embeddings = torch.nn.functional.normalize(embeddings, p=2, dim=1)
-                
-                # Add to list
-                all_embeddings.append(embeddings.cpu().numpy())
-            
-            # Combine batch results
-            return np.vstack(all_embeddings)
+                # Combine batch results
+                return np.vstack(all_embeddings)
         
         except Exception as e:
             logger.error(f"Error generating embeddings: {str(e)}")
-            return np.zeros((len(valid_texts), self.model.config.hidden_size))
+            return np.zeros((len(valid_texts), self._dimension))
     
     def embed_document(self, document: Dict[str, Any], text_field: str = 'processed.clean_text') -> np.ndarray:
         """
@@ -191,7 +229,7 @@ class TextEmbedder:
                 text = text[field]
             else:
                 logger.warning(f"Field '{field}' not found in document")
-                return np.zeros(self.model.config.hidden_size)
+                return np.zeros(self._dimension)
         
         return self.embed_text(text)
     

@@ -1,34 +1,23 @@
-"""
-Global configuration settings for the application
-"""
 import os
 from pathlib import Path
-from typing import Dict, Any
+import logging
 
-# Application identity
-APP_NAME = "AI Job Matcher"
-APP_VERSION = "1.0.0"
-
-# Project directory structure
-PROJECT_ROOT = Path(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+# Project directory paths
+PROJECT_ROOT = Path(__file__).parent.parent.absolute()
 DATA_DIR = PROJECT_ROOT / "data"
-LOGS_DIR = PROJECT_ROOT / "logs"
-MODELS_DIR = PROJECT_ROOT / "models"
+LOG_DIR = PROJECT_ROOT / "logs"
+LOG_DIR.mkdir(exist_ok=True)
 
-# Create directories if they don't exist
-DATA_DIR.mkdir(exist_ok=True)
-LOGS_DIR.mkdir(exist_ok=True)
-MODELS_DIR.mkdir(exist_ok=True)
+# Default log file
+DEFAULT_LOG_FILE = LOG_DIR / "app.log"
 
-# Raw document storage paths
-RESUME_RAW_DIR = DATA_DIR / "resumes" / "raw"
-JOB_DESC_RAW_DIR = DATA_DIR / "job_descriptions" / "raw"
-RESUME_RAW_DIR.mkdir(exist_ok=True, parents=True)
-JOB_DESC_RAW_DIR.mkdir(exist_ok=True, parents=True)
-
-# Processed document storage paths
-RESUME_PROCESSED_DIR = DATA_DIR / "resumes" / "processed"
-JOB_DESC_PROCESSED_DIR = DATA_DIR / "job_descriptions" / "processed"
+# Document directories
+RESUME_DIR = DATA_DIR / "resumes"
+JOB_DESC_DIR = DATA_DIR / "job_descriptions"
+RESUME_RAW_DIR = RESUME_DIR / "raw"
+JOB_DESC_RAW_DIR = JOB_DESC_DIR / "raw"
+RESUME_PROCESSED_DIR = DATA_DIR / "processed" / "resumes"
+JOB_DESC_PROCESSED_DIR = DATA_DIR / "processed" / "job_descriptions"
 RESUME_PROCESSED_DIR.mkdir(exist_ok=True, parents=True)
 JOB_DESC_PROCESSED_DIR.mkdir(exist_ok=True, parents=True)
 
@@ -50,33 +39,28 @@ DEFAULT_CHUNK_OVERLAP = 50
 DEFAULT_SIMILARITY_THRESHOLD = 0.6
 DEFAULT_HYBRID_WEIGHT = 0.7  # Weight for semantic search vs keyword matching
 
+# Fine-tuned models directory and settings
+MODELS_DIR = PROJECT_ROOT / "models"
+MODELS_DIR.mkdir(exist_ok=True)
+
+# Fine-tuned model paths
+FINETUNED_EMBEDDING_MODEL = MODELS_DIR / "finetuned_embeddings"
+FINETUNED_SKILL_EXTRACTOR = MODELS_DIR / "skill_extractor" 
+FINETUNED_VOICE_ANALYZER = MODELS_DIR / "voice_analyzer"
+
+# Fine-tuning settings
+FINETUNING_EPOCHS = 3
+FINETUNING_BATCH_SIZE = 16
+FINETUNING_LEARNING_RATE = 2e-5
+
+# Flag to enable/disable fine-tuned models
+USE_FINETUNED_MODELS = True
+
 # LLM API configuration
-# Using Google API exclusively (no OpenAI or Anthropic)
 API_KEYS = {
-    "google": os.environ.get("GOOGLE_API_KEY", ""),
-    # These are set to empty strings to avoid errors if code tries to access them
-    "openai": "",
-    "anthropic": "",
-    "cohere": ""
+    "gemini": os.getenv("GEMINI_API_KEY", ""),
+    # Add other API keys as needed
 }
 
-
-STREAMLIT_THEME = {
-    "primary_color": "#0083B8",
-    "background_color": "#FFFFFF",
-    "secondary_background_color": "#F0F2F6",
-    "text_color": "#262730",
-    "font": "sans serif",
-}
-
-# Default system prompts for LLM interactions
-SYSTEM_PROMPTS = {
-    "interview_questions": "Generate relevant interview questions based on the job description and resume. Focus on assessing the candidate's skills, experience, and fit for the role.",
-    "skill_assessment": "Analyze the match between the resume and job description. Identify strengths, weaknesses, and areas for improvement.",
-    "resume_feedback": "Provide constructive feedback on the resume. Suggest improvements for better alignment with the target job description.",
-}
-
-# File type settings
-ALLOWED_RESUME_TYPES = [".pdf", ".docx", ".txt"]
-ALLOWED_JOB_DESC_TYPES = [".pdf", ".docx", ".txt", ".md"]
-MAX_FILE_SIZE_MB = 10
+# Logging level
+LOG_LEVEL = logging.INFO
