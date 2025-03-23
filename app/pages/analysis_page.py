@@ -618,23 +618,30 @@ def render():
         st.markdown("### Candidate Profile")
         profile_cols = st.columns(2)
         with profile_cols[0]:
-            st.markdown('<div class="card">', unsafe_allow_html=True)
-            st.markdown("<h4>Contact Information</h4>", unsafe_allow_html=True)
             contact = info.get("contact", {})
-            st.markdown(f"**Name:** {contact.get('name')}")
-            st.markdown(f"**Email:** {contact.get('email')}")
-            st.markdown(f"**Phone:** {contact.get('phone')}")
-            st.markdown(f"**Location:** {contact.get('location')}")
-            st.markdown(f"**Current Title:** {info.get('job_title')}")
-            st.markdown('</div>', unsafe_allow_html=True)
-        with profile_cols[1]:
-            st.markdown('<div class="card">', unsafe_allow_html=True)
-            st.markdown("<h4>Resume Summary</h4>", unsafe_allow_html=True)
-            summary_text = info.get("summary", "Not available")
-            st.write(summary_text)
-            st.markdown('</div>', unsafe_allow_html=True)
+            contact_html = f'''
+            <div class="card">
+            <h4>Contact Information</h4>
+            <p><strong>Name:</strong> {contact.get('name')}</p>
+            <p><strong>Email:</strong> {contact.get('email')}</p>
+            <p><strong>Phone:</strong> {contact.get('phone')}</p>
+            <p><strong>Location:</strong> {contact.get('location')}</p>
+            <p><strong>Current Title:</strong> {info.get('job_title')}</p>
+            </div>
+            '''
+            st.markdown(contact_html, unsafe_allow_html=True)
 
-        # Skills Section
+        with profile_cols[1]:
+            summary_text = info.get("summary", "Not available")
+            summary_html = f'''
+            <div class="card">
+            <h4>Resume Summary</h4>
+            <p>{summary_text}</p>
+            </div>
+            '''
+            st.markdown(summary_html, unsafe_allow_html=True)
+
+       # Skills Section
         st.markdown("### Skills")
         skills_cols = st.columns(2)
         

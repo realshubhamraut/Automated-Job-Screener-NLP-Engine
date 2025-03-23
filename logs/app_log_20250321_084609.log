@@ -1,0 +1,33 @@
+2025-03-21 08:46:09 - root - INFO - Logging initialized. Log file: /Users/proxim/Desktop/Automated-First-Screener-and-AI-Job-Matching-NLP-WebEngine/logs/app_log_20250321_084609.log
+2025-03-21 08:46:17 - app.pages.upload_page - INFO - Loaded 9 resumes from storage
+2025-03-21 08:46:17 - app.pages.upload_page - INFO - Loaded 2 job descriptions from storage
+2025-03-21 08:48:57 - src.document_processor.embedder - INFO - Initializing embedder with pre-trained model sentence-transformers/all-MiniLM-L6-v2 on cpu
+2025-03-21 08:48:57 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: mps
+2025-03-21 08:48:57 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-03-21 08:49:02 - src.document_processor.embedder - INFO - Loaded model as SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-03-21 08:49:12 - src.document_processor.embedder - INFO - Initializing embedder with pre-trained model sentence-transformers/all-MiniLM-L6-v2 on cpu
+2025-03-21 08:49:12 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: mps
+2025-03-21 08:49:12 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-03-21 08:49:15 - src.document_processor.embedder - INFO - Loaded model as SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-03-21 08:49:20 - src.document_processor.embedder - INFO - Initializing embedder with pre-trained model sentence-transformers/all-MiniLM-L6-v2 on cpu
+2025-03-21 08:49:20 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: mps
+2025-03-21 08:49:20 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-03-21 08:49:23 - src.document_processor.embedder - INFO - Loaded model as SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-03-21 08:49:29 - src.document_processor.embedder - INFO - Initializing embedder with pre-trained model sentence-transformers/all-MiniLM-L6-v2 on cpu
+2025-03-21 08:49:29 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: mps
+2025-03-21 08:49:29 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-03-21 08:49:36 - src.document_processor.embedder - INFO - Initializing embedder with pre-trained model sentence-transformers/all-MiniLM-L6-v2 on cpu
+2025-03-21 08:49:36 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: mps
+2025-03-21 08:49:36 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-03-21 08:49:40 - src.document_processor.embedder - INFO - Loaded model as SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-03-21 08:49:40 - src.document_processor.embedder - INFO - Loaded model as SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-03-21 08:49:43 - src.document_processor.embedder - INFO - Initializing embedder with pre-trained model sentence-transformers/all-MiniLM-L6-v2 on cpu
+2025-03-21 08:49:43 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: mps
+2025-03-21 08:49:43 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-03-21 08:49:46 - src.document_processor.embedder - INFO - Loaded model as SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-03-21 08:50:12 - app.pages.analysis_page - INFO - Loaded job description: 92069209.pdf
+2025-03-21 08:50:12 - app.pages.analysis_page - INFO - Loaded job description: jobdescription.txt
+2025-03-21 09:13:20 - src.document_processor.embedder - INFO - Initializing embedder with pre-trained model sentence-transformers/all-MiniLM-L6-v2 on cpu
+2025-03-21 09:13:20 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: mps
+2025-03-21 09:13:20 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-03-21 09:13:27 - src.document_processor.embedder - INFO - Loaded model as SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
