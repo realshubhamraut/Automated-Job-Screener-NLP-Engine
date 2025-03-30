@@ -28,3 +28,10 @@ sentence-transformers>=2.2.0
 streamlit_webrtc
 pydub
 SpeechRecognition
+
+tensorflow==2.15.0 
+tensorflow-hub==0.15.0
+SpeechRecognition==3.10.0
+pyaudio==0.2.13
+streamlit-ace==0.1.1
+pydub==0.25.1
