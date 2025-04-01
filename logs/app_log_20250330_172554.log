@@ -1,0 +1,9 @@
+2025-03-30 17:25:54 - root - INFO - Logging initialized. Log file: /Users/proxim/Desktop/Automated-First-Screener-and-AI-Job-Matching-NLP-WebEngine/logs/app_log_20250330_172554.log
+2025-03-30 17:26:06 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: mps
+2025-03-30 17:26:06 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-03-30 17:26:09 - app.pages.upload_page - INFO - Loaded 9 resumes from storage
+2025-03-30 17:26:09 - app.pages.upload_page - INFO - Loaded 2 job descriptions from storage
+2025-03-30 17:29:30 - src.document_processor.embedder - INFO - Initializing embedder with pre-trained model sentence-transformers/all-MiniLM-L6-v2 on cpu
+2025-03-30 17:29:30 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: mps
+2025-03-30 17:29:30 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
+2025-03-30 17:29:35 - src.document_processor.embedder - INFO - Loaded model as SentenceTransformer: sentence-transformers/all-MiniLM-L6-v2
