@@ -13,6 +13,18 @@ DEFAULT_LOG_FILE = LOG_DIR / "app.log"
 
 APP_NAME = "AI Job Matching & Screening Assistant"
 
+# Azure Storage configuration
+AZURE_STORAGE_ENABLED = os.getenv("AZURE_STORAGE_ENABLED", "False").lower() == "true"
+AZURE_STORAGE_CONNECTION_STRING = os.getenv("AZURE_STORAGE_CONNECTION_STRING", "")
+AZURE_STORAGE_ACCOUNT_NAME = os.getenv("AZURE_STORAGE_ACCOUNT_NAME", "")
+AZURE_STORAGE_ACCOUNT_KEY = os.getenv("AZURE_STORAGE_ACCOUNT_KEY", "")
+AZURE_STORAGE_USE_CONNECTION_STRING = os.getenv("AZURE_STORAGE_USE_CONNECTION_STRING", "True").lower() == "true"
+AZURE_STORAGE_USE_SAS_TOKEN = os.getenv("AZURE_STORAGE_USE_SAS_TOKEN", "False").lower() == "true"
+AZURE_STORAGE_SAS_TOKEN = os.getenv("AZURE_STORAGE_SAS_TOKEN", "")
+AZURE_CONTAINER_RAW_RESUMES = "raw-resumes"
+AZURE_CONTAINER_RAW_JOBS = "raw-jobs"
+AZURE_CONTAINER_PROCESSED_RESUMES = "processed-resumes"
+AZURE_CONTAINER_PROCESSED_JOBS = "processed-jobs"
 
 # Document directories
 RESUME_DIR = DATA_DIR / "resumes"

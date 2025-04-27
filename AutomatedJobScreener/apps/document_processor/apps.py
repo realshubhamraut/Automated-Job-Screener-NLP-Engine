@@ -10,4 +10,4 @@ class DocumentProcessorConfig(AppConfig):
         """
         Import signals when the app is ready.
         """
-        import apps.document_processor.signals  # noqa
+        import apps.document_processor.signals  

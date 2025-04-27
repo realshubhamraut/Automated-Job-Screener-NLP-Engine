@@ -2,33 +2,46 @@ import os
 import io
 import PyPDF2
 import docx
-from typing import Union, BinaryIO, Any
+from typing import Union, BinaryIO, Any, Optional, Dict, Tuple
 import streamlit as st
 
 from src.utils.logger import get_logger
+from src.utils.azure_storage import AzureStorageManager
 
 logger = get_logger(__name__)
 
 class DocumentLoader:
     """
     Load and extract text from various document formats.
-    Handles both file paths and Streamlit UploadedFile objects.
+    Handles both file paths, Streamlit UploadedFile objects, and Azure Storage documents.
     """
     
-    def __init__(self):
-        """Initialize the document loader"""
-        pass
+    def __init__(self, use_azure: bool = False):
+        """
+        Initialize the document loader
+        
+        Args:
+            use_azure: Whether to use Azure Storage for document operations
+        """
+        self.use_azure = use_azure
+        self.azure_storage = AzureStorageManager() if use_azure else None
     
-    def load_document(self, file_obj: Union[str, io.BytesIO, Any]) -> str:
+    def load_document(self, file_obj: Union[str, io.BytesIO, Any], doc_type: str = None, doc_id: str = None) -> Union[str, Tuple[str, Dict]]:
         """
         Extract text from a document file
         
         Args:
             file_obj: Can be a file path, BytesIO object, or Streamlit UploadedFile
+            doc_type: Document type ('resume' or 'job') - required for Azure Storage
+            doc_id: Document ID - required for Azure Storage
             
         Returns:
-            Extracted text
+            Extracted text or tuple of (extracted text, metadata) if from Azure
         """
+        # Handle Azure Storage documents if configured
+        if self.use_azure and isinstance(file_obj, str) and doc_type and doc_id:
+            return self._load_from_azure(doc_id, doc_type)
+        
         try:
             # Handle Streamlit UploadedFile
             if hasattr(file_obj, 'name') and hasattr(file_obj, 'read'):
@@ -74,6 +87,45 @@ class DocumentLoader:
                 
         except Exception as e:
             logger.error(f"Error loading document: {str(e)}")
+            raise
+    
+    def _load_from_azure(self, doc_id: str, doc_type: str) -> Tuple[str, Dict]:
+        """
+        Load a document from Azure Storage
+        
+        Args:
+            doc_id: Document ID
+            doc_type: Type of document ('resume' or 'job')
+            
+        Returns:
+            Tuple of (extracted text, metadata)
+        """
+        if not self.azure_storage:
+            raise RuntimeError("Azure Storage not initialized")
+        
+        try:
+            # Download document from Azure Storage
+            file_content, metadata = self.azure_storage.download_document(doc_id, doc_type)
+            
+            # Create BytesIO object
+            file_stream = io.BytesIO(file_content)
+            
+            # Extract text based on file type
+            ext = metadata.get('file_extension', '').lower()
+            
+            if ext == '.pdf':
+                text = self._extract_from_pdf(file_stream)
+            elif ext == '.docx':
+                text = self._extract_from_docx(file_stream)
+            elif ext == '.txt' or ext == '.md':
+                text = file_content.decode('utf-8', errors='replace')
+            else:
+                raise ValueError(f"Unsupported file format: {ext}")
+                
+            return text, metadata
+            
+        except Exception as e:
+            logger.error(f"Error loading document from Azure Storage: {str(e)}")
             raise
     
     def _extract_from_pdf(self, file_stream: BinaryIO) -> str:
